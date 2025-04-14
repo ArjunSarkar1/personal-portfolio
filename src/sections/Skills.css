@@ -1,0 +1,267 @@
+.skills {
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 191, 0.03) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.skills-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 4rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 2.5rem;
+}
+
+.skills-category {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skills-category:hover {
+  transform: translateY(-5px);
+}
+
+.category-title {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2));
+  border-radius: 1.5px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.skill-percentage {
+  color: var(--accent-color-2);
+  font-weight: 600;
+}
+
+.skill-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2));
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.skill-bar.animate {
+  width: var(--final-width) !important;
+}
+
+/* Radar Chart */
+.skills-radar-container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.radar-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.radar-chart {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.radar-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.radar-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.radar-circle.c1 {
+  width: 20%;
+  height: 20%;
+}
+
+.radar-circle.c2 {
+  width: 40%;
+  height: 40%;
+}
+
+.radar-circle.c3 {
+  width: 60%;
+  height: 60%;
+}
+
+.radar-circle.c4 {
+  width: 80%;
+  height: 80%;
+}
+
+.radar-axis {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform-origin: left center;
+}
+
+.radar-axis.a1 {
+  transform: rotate(0deg);
+}
+
+.radar-axis.a2 {
+  transform: rotate(72deg);
+}
+
+.radar-axis.a3 {
+  transform: rotate(144deg);
+}
+
+.radar-axis.a4 {
+  transform: rotate(216deg);
+}
+
+.radar-axis.a5 {
+  transform: rotate(288deg);
+}
+
+.radar-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  clip-path: polygon(
+    50% 5%,  /* Programming */
+    85% 35%, /* Frameworks */
+    75% 75%, /* Tools */
+    25% 75%, /* AI/ML */
+    15% 35%  /* Research */
+  );
+  background: linear-gradient(135deg, rgba(123, 104, 238, 0.2), rgba(0, 255, 191, 0.2));
+  border: 2px solid rgba(123, 104, 238, 0.4);
+  animation: radarRotate 10s infinite linear;
+}
+
+@keyframes radarRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.radar-label {
+  position: absolute;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.radar-label.l1 {
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.radar-label.l2 {
+  top: 35%;
+  right: 10%;
+}
+
+.radar-label.l3 {
+  bottom: 20%;
+  right: 20%;
+}
+
+.radar-label.l4 {
+  bottom: 20%;
+  left: 20%;
+}
+
+.radar-label.l5 {
+  top: 35%;
+  left: 10%;
+}
+
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .radar-chart {
+    height: 300px;
+  }
+  
+  .radar-label {
+    font-size: 0.8rem;
+  }
+} 

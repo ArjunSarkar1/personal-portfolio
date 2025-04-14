@@ -1,8 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -39,4 +37,37 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--primary-color);
+  min-height: 100vh;
+}
+
+main {
+  padding-top: 80px; /* To prevent navbar overlap */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensures all sections take appropriate height and spacing */
+section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
 }
