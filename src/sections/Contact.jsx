@@ -116,7 +116,7 @@ export const Contact = () => {
                 have questions about my work, or just want to connect.
               </p>
               <p className="highlight-text">
-                "Pushing boundaries with code, data, and questions worth asking."
+                In a world of 1s and 0s, I choose to build something meaningful.
               </p>
             </div>
             
