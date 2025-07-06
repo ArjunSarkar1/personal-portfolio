@@ -145,7 +145,7 @@
     width: 45%;
     display: inline-flex;
     align-items: center;
-    gap: 0.3em;
+    gap: 0.45em;
     background: transparent;
     color: var(--color-accent);
     font-weight: 600;
