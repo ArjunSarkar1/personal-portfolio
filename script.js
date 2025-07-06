@@ -62,8 +62,8 @@ header.addEventListener('mouseleave', () => {
   }
 });
 
-// Smooth scrolling for navigation links and hero buttons
-document.querySelectorAll('.main-nav a[href^="#"], .hero-actions a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links
+document.querySelectorAll('.main-nav a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
     const targetId = this.getAttribute('href');
@@ -84,7 +84,7 @@ const heroSection = document.querySelector('.hero-section');
 
 function changeBackgroundImage() {
   currentImageIndex = (currentImageIndex + 1) % totalImages;
-  const newImagePath = `./src/assets/images/background${currentImageIndex}.jpg`;
+  const newImagePath = `./src/assets/images/background/background${currentImageIndex}.jpg`;
   
   // Create a temporary image to preload
   const tempImage = new Image();
@@ -96,3 +96,37 @@ function changeBackgroundImage() {
 
 // Start the slideshow - change image every 10 seconds
 setInterval(changeBackgroundImage, 10000);
+
+// === Portfolio View More functionality ===
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = Array.from(document.querySelectorAll('[data-project-card]'));
+  const viewMoreBtn = document.getElementById('view-more-projects');
+  const INITIAL_VISIBLE = 3;
+  const INCREMENT = 3;
+  let visibleCount = INITIAL_VISIBLE;
+
+  function updateCards() {
+    cards.forEach((card, idx) => {
+      if (idx < visibleCount) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    if (visibleCount >= cards.length) {
+      viewMoreBtn.style.display = 'none';
+    } else {
+      viewMoreBtn.style.display = 'block';
+    }
+  }
+
+  if (cards.length > INITIAL_VISIBLE) {
+    updateCards();
+    viewMoreBtn.addEventListener('click', function() {
+      visibleCount += INCREMENT;
+      updateCards();
+    });
+  } else {
+    viewMoreBtn.style.display = 'none';
+  }
+});
