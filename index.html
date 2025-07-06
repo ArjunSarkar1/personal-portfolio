@@ -1,13 +1,367 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Sarkar - Personal Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<section id="hero" class="hero-section">
+  <header class="main-header">
+    <div class="nav-container">
+              <nav class="main-nav">
+          <a href="#hero">About Me</a>
+          <a href="#skills">Skills</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Connect</a>
+          <a href="#" class="nav-dropdown">Other</a>
+        </nav>
+    </div>
+  </header>
+  <div class="container hero-content-container">
+          <div class="hero-content">
+        <h1>Arjun Sarkar</h1>
+        <p>I am a passionate computer science student dedicated to exploring innovative solutions through technology. Dive into my projects and insights on my journey in the tech world.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-light">Projects</a>
+          <a href="#blog" class="btn btn-translucent">Blog</a>
+        </div>
+      </div>
+      <p class="photo-credits">Photos provided by <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer"><strong>Pexels</strong></a> and <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer"><strong>Unsplash</strong></a></p>
+  </div>
+</section>
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-title">
+      <span class="tagline">Skills</span>
+      <h2>Core Competencies That Define My Expertise</h2>
+      <p>I specialize in creating efficient algorithms and developing user-friendly applications. My passion lies in leveraging technology to solve real-world problems.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63191.svg" alt="Icon">
+        <h3>Expertise in Software Development and Design</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+      <div class="skill-item">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63196.svg" alt="Icon">
+        <h3>Proficient in Data Analysis and Visualization</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+      <div class="skill-item">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63201.svg" alt="Icon">
+        <h3>Skilled in Web Development and User Experience</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+      <div class="skill-item">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63206.svg" alt="Icon">
+        <h3>Medium length section heading goes here</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      </div>
+    </div>
+    <div class="skills-actions">
+      <a href="#" class="btn btn-secondary">Learn</a>
+      <a href="#" class="btn-link">
+        Explore
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63212_4179_8939.svg" alt="arrow right">
+      </a>
+    </div>
+  </div>
+</section>
+<section id="portfolio" class="portfolio-section">
+  <div class="container">
+    <div class="section-title centered">
+      <span class="tagline-light">Portfolio</span>
+      <h2>My Recent Projects</h2>
+      <p>Explore my innovative projects and their impact.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-column">
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/56e23bf3745a50866c77055c22094d44894c5247.png" alt="Weather App">
+          <div class="card-content">
+            <h3>Weather App</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Web Development</span>
+              <span class="tag">API Integration</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63236_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/1adb0ce1d0cc3eaa2c1080051e9323a279f53d31.png" alt="E-commerce Platform">
+          <div class="card-content">
+            <h3>E-commerce Platform</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">E-commerce</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63249_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/28c996a484abc6a6532fe83e61618e0ed8a2a3b3.png" alt="Personal Blog">
+          <div class="card-content">
+            <h3>Personal Blog</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Blogging</span>
+              <span class="tag">Content Creation</span>
+              <span class="tag">WordPress</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63262_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/f8013292824ce8c8f4038dc7df843b63e93988b3.png" alt="Chat Application">
+          <div class="card-content">
+            <h3>Chat Application</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Real-time</span>
+              <span class="tag">Socket.io</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63275_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/9a689b6728258218283937226da757773b2955a8.png" alt="Portfolio Website">
+          <div class="card-content">
+            <h3>Portfolio Website</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Portfolio</span>
+              <span class="tag">Web Design</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63288_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/40fed9e84beed9c88ca21ebd52b57a72004d621a.png" alt="Interactive Game">
+          <div class="card-content">
+            <h3>Interactive Game</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Game Development</span>
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63301_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+      </div>
+      <div class="portfolio-column">
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/45013ccbfe44eb7be85fb9012a9ec4b6b1c59a5a.png" alt="Project name here">
+          <div class="card-content">
+            <h3>Project name here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Tag one</span>
+              <span class="tag">Tag two</span>
+              <span class="tag">Tag three</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63315_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/45013ccbfe44eb7be85fb9012a9ec4b6b1c59a5a.png" alt="Project name here">
+          <div class="card-content">
+            <h3>Project name here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Tag one</span>
+              <span class="tag">Tag two</span>
+              <span class="tag">Tag three</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63328_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+      </div>
+      <div class="portfolio-column">
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/45013ccbfe44eb7be85fb9012a9ec4b6b1c59a5a.png" alt="Project name here">
+          <div class="card-content">
+            <h3>Project name here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Tag one</span>
+              <span class="tag">Tag two</span>
+              <span class="tag">Tag three</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63342_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/45013ccbfe44eb7be85fb9012a9ec4b6b1c59a5a.png" alt="Project name here">
+          <div class="card-content">
+            <h3>Project name here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="tags">
+              <span class="tag">Tag one</span>
+              <span class="tag">Tag two</span>
+              <span class="tag">Tag three</span>
+            </div>
+            <a href="#" class="btn-link-light">View project <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63355_4179_9009.svg" alt="arrow right"></a>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="section-actions">
+      <a href="#" class="btn btn-translucent">View all</a>
+    </div>
+  </div>
+</section>
+<section id="blog" class="blog-section">
+  <div class="container">
+    <div class="section-title centered">
+      <span class="tagline">Blog</span>
+      <h2>Latest Insights and Trends</h2>
+      <p>I share my two cents on the latest technology news, in-depth analysis and personal perspectives on industry trends.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/7a505096de25472069c0a892675e0a5f5b9e9284.png" alt="People discussing AI">
+        <div class="card-content">
+          <div class="card-info">
+            <span class="tag">Tech</span>
+            <span class="read-time">5 min read</span>
+          </div>
+          <h3>Understanding AI in Modern Applications</h3>
+          <p>A deep dive into how AI is transforming industries today.</p>
+          <a href="#" class="btn-link">Read more <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63377_4179_8939.svg" alt="arrow right"></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/65fc7df3d0daff139db8f7d80d8603e37447e2fc.png" alt="People working on laptops">
+        <div class="card-content">
+          <div class="card-info">
+            <span class="tag">Development</span>
+            <span class="read-time">5 min read</span>
+          </div>
+          <h3>Building Responsive Web Applications</h3>
+          <p>Learn how to create web apps that adapt to any device.</p>
+          <a href="#" class="btn-link">Read more <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63387_4179_8939.svg" alt="arrow right"></a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/2e3584b05a84d531edb96e7e89ddf5fcbc3227d5.png" alt="Team collaborating on design">
+        <div class="card-content">
+          <div class="card-info">
+            <span class="tag">Design</span>
+            <span class="read-time">5 min read</span>
+          </div>
+          <h3>The Future of UX Design</h3>
+          <p>Discover the trends shaping user experience in the digital age.</p>
+          <a href="#" class="btn-link">Read more <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63397_4179_8939.svg" alt="arrow right"></a>
+        </div>
+      </article>
+    </div>
+    <div class="section-actions">
+      <a href="#" class="btn btn-secondary">View all</a>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-text">
+        <span class="tagline-light">Connect</span>
+        <h2>Get in Touch</h2>
+        <p>I would love to hear from you. Reach out with any questions or just to say hello!</p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-item">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63411.svg" alt="Email Icon">
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:arjuncodes111@gmail.com">arjuncodes111@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63421.svg" alt="Location Icon">
+          <div>
+            <h4>Location</h4>
+            <p>Manitoba, Canada</p>
+          </div>
+        </div>
+              </div>
+      </div>
+      <div class="contact-image-wrapper">
+        <img src="./src/assets/images/background3.jpg" alt="Contact section image" class="contact-image">
+      </div>
+    </div>
+  </section>
+<footer id="footer" class="main-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-links-area">
+        <div class="footer-col logo-col">
+          <a href="#" class="logo">
+            <img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/I8202_63431_4727_56240.svg" alt="Company Logo">
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Extracirricular</h4>
+          <ul>
+            <li><a href="#">Research Papers</a></li>
+            <li><a href="#">Hackathons</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Hobbies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Join</h4>
+        <p>Subscribe to my newsletter to get the latest updates from my blog.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email here">
+          <button type="submit" class="btn btn-translucent">Subscribe</button>
+        </form>
+        <p class="form-notice">By subscribing, you consent to our Privacy Policy and agree to receive updates.</p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <div class="footer-credits">
+        <p>© 2025 Arjun Sarkar. All rights reserved.</p>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><img src="/page/f79a4df2-311c-4208-a791-5698593830fe/images/8202_63479.svg" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </div>
+  </footer>
+</body>
+<script src="script.js"></script>
 </html>
