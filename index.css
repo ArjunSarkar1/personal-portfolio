@@ -99,6 +99,12 @@
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease;
+    border-radius: 999px;
+  }
+  
+  .btn-icon {
+    width: 18px;
+    height: 18px;
   }
   
   .btn-primary {
@@ -106,6 +112,7 @@
     border-color: var(--color-accent);
     color: var(--color-text-light);
     padding: 4px 10px;
+    border-radius: 999px;
   }
   
   .btn-light {
@@ -114,6 +121,7 @@
     color: var(--color-text-dark);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-shadow: none;
+    border-radius: 999px;
   }
   
   .btn-translucent {
@@ -122,19 +130,15 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    border-radius: 999px;
   }
   
   .btn-secondary {
-    background-color: rgba(12, 0, 4, 0.05);
-    color: var(--color-text-dark);
+    all: unset;
   }
   
   .btn-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--color-text-dark);
-    font-weight: 500;
+    all: unset;
   }
   
   .btn-link-light {
@@ -209,27 +213,57 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
-    padding: 12px 30px;
-    backdrop-filter: blur(10px);
-    min-width: 400px;
-    max-width: 600px;
+    padding: 12px 28px;
+    /* min-width: 400px; */
+    max-width: 400vw;
+    min-width: max-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: auto;
+    border: 1.5px solid #fff;
   }
   .main-nav {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    gap: 32px;
+    gap: 0;
   }
   .main-nav a {
     font-size: 14px;
     line-height: 24px;
-    padding: 1px 8px;
+    padding: 0 20px;
     border-radius: 20px;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  
+  .nav-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .main-nav a .nav-icon {
+    transition: filter 0.3s;
+    display: inline-block;
+    vertical-align: middle;
   }
   
   .main-nav a:hover {
     background-color: white;
     color: black;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  
+  .main-nav a:hover .nav-icon {
+    filter: none;
   }
   .nav-dropdown {
     display: flex;
@@ -268,12 +302,17 @@
   }
   
   .photo-credits {
+    position: absolute;
+    right: 40px;
+    bottom: 32px;
+    z-index: 2;
     font-size: 16px;
     opacity: 0.9;
-    position: absolute;
-    bottom: 20px;
-    right: 80px;
-    z-index: 2;
+    margin: 0;
+    background: none;
+    color: #fff;
+    text-align: right;
+    pointer-events: auto;
   }
   
   .photo-credits a {
@@ -285,10 +324,10 @@
   .photo-credits a:hover {
     opacity: 1;
   }
-  .hero-actions {
-    display: flex;
-    gap: 16px;
-  }
+  .hero-actions { display: none !important; }
+  .hero-actions a:hover, .hero-actions a:focus { all: unset; }
+  .btn-light:hover, .btn-light:focus { all: unset; }
+  .btn-translucent:hover, .btn-translucent:focus { all: unset; }
   @media (max-width: 768px) {
     .hero-section {
       min-height: 700px;
@@ -343,11 +382,7 @@
     font-size: 16px;
     line-height: 1.5;
   }
-  .skills-actions {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
+  .skills-actions { display: none !important; }
   @media (max-width: 1024px) {
     .skills-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -543,6 +578,12 @@
     height: 24px;
     margin-top: 4px;
   }
+  
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
   .contact-item h4 {
     font-size: 22px;
     line-height: 1.4;
@@ -617,10 +658,18 @@
     flex-direction: column;
   }
   .footer-col li a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 8px 0;
     font-size: 14px;
     line-height: 1.5;
+  }
+  
+  .footer-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
   }
   .footer-newsletter {
     max-width: 400px;

@@ -62,29 +62,17 @@ header.addEventListener('mouseleave', () => {
   }
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('.main-nav a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links and hero buttons
+document.querySelectorAll('.main-nav a[href^="#"], .hero-actions a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    
     const targetId = this.getAttribute('href');
     const targetSection = document.querySelector(targetId);
-    
     if (targetSection) {
-      // Smooth scroll to the target section
       targetSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
-      
-      // Show header briefly when navigating
-      header.style.transform = 'translateY(0)';
-      
-      // Reset the mouse timer
-      if (mouseTimer) {
-        clearTimeout(mouseTimer);
-        mouseTimer = null;
-      }
     }
   });
 });
@@ -107,4 +95,4 @@ function changeBackgroundImage() {
 }
 
 // Start the slideshow - change image every 10 seconds
-setInterval(changeBackgroundImage, 10000); 
+setInterval(changeBackgroundImage, 10000);
