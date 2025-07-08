@@ -39,9 +39,6 @@ export default function BlogSection({ blogs }) {
             </article>
           ))}
         </div>
-        <div className="section-actions">
-          <button id="view-more-blogs" className="btn btn-secondary">View Blog</button>
-        </div>
       </div>
     </section>
   );

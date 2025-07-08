@@ -1,5 +1,8 @@
 import React from 'react';
 import '../App.css';
+import footerPic from '../assets/images/footer/footer-pic.png';
+import mailIcon from '../assets/svg/mail.svg';
+import locationIcon from '../assets/svg/location-pin.svg';
 
 // Usage: <Footer footerLinks={footerLinks} />
 export default function Footer({ footerLinks }) {
@@ -36,6 +39,19 @@ export default function Footer({ footerLinks }) {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+          <div className="footer-pic-wrapper">
+            <img src={footerPic} alt="Footer illustration" className="footer-pic" />
+            <div className="footer-info">
+              <div className="footer-info-row">
+                <img src={mailIcon} alt="Email" className="footer-info-icon" />
+                <span className="footer-info-text">arjuncodes111@gmail.com</span>
+              </div>
+              <div className="footer-info-row">
+                <img src={locationIcon} alt="Location" className="footer-info-icon" />
+                <span className="footer-info-text">Manitoba, Canada</span>
+              </div>
             </div>
           </div>
           <div className="footer-newsletter">

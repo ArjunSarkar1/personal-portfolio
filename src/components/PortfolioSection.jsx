@@ -105,7 +105,7 @@ export default function PortfolioSection({ projects }) {
           </div>
         </div>
         {showViewMore && (
-          <button id="view-more-projects" className="btn" onClick={handleViewMore} aria-label="Show more projects">
+          <button id="view-more-projects" className="btn btn-secondary" onClick={handleViewMore} aria-label="Show more projects">
             View More
           </button>
         )}

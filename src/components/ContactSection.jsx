@@ -48,7 +48,7 @@ export default function ContactSection({ contact }) {
           <div className="contact-text">
             <span className="tagline-light">Connect</span>
             <h2>Get in Touch</h2>
-            <p>I would love to hear from you. Reach out with any questions or just to say hello!</p>
+            <p>I would love to hear from you. Reach out with any questions, collaboration on projects or just to say hello!</p>
             <form className="contact-form" onSubmit={handleSubmit} autoComplete="off">
               <label htmlFor="contact-name">Name</label>
               <input
