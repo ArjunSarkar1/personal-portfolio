@@ -42,10 +42,11 @@ export default function Footer({ footerLinks }) {
             <h4>Join</h4>
             <p>Subscribe to my newsletter to get the latest updates from my blog.</p>
             <form className="newsletter-form">
-              <input type="email" placeholder="Your email here" />
+              <label htmlFor="newsletter-email" style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Email address</label>
+              <input id="newsletter-email" type="email" placeholder="Your email here" />
               <button type="submit" className="btn">Subscribe</button>
             </form>
-            <p className="form-notice">By subscribing, you consent to our Privacy Policy and agree to receive updates.</p>
+            <p className="form-notice" aria-live="polite">By subscribing, you consent to our Privacy Policy and agree to receive updates.</p>
           </div>
         </div>
         <hr className="footer-divider" />

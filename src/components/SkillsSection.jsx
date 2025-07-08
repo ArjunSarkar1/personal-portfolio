@@ -14,7 +14,7 @@ export default function SkillsSection({ coreSkills, detailedSkills }) {
         <div className="skills-grid">
           {coreSkills.map(skill => (
             <div className="skill-item" key={skill.title}>
-              <img src={new URL(`../assets/svg/${skill.icon}`, import.meta.url).href} alt={skill.title} />
+              <img src={new URL(`../assets/svg/${skill.icon}`, import.meta.url).href} alt={skill.title} loading="lazy" width="48" height="48" />
               <h3>{skill.title}</h3>
               <p>{skill.description}</p>
             </div>

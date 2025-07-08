@@ -10,9 +10,9 @@ export const navLinks = [
 
 export const hero = {
   name: 'Arjun Sarkar',
-  bio: 'Computer Science student building innovative solutions that solve real-world problems. I transform complex challenges into elegant, scalable applications through AI, data science, and full-stack development.',
+  bio: 'Computer Science student building innovative solutions that solve real-world problems. I transform complex challenges into elegant, scalable applications through AI, data science, and entrepreneurial thinking.',
   tagline: 'Turning ideas into impactful technology',
-  interests: ['AI & Machine Learning', 'Full-Stack Development', 'Data Science'],
+  interests: ['AI & Machine Learning', 'Entrepreneurship', 'Data Science'],
   backgroundImage: 'background/background0.jpg',
   photoCredits: [
     { name: 'Pexels', url: 'https://www.pexels.com' },

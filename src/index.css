@@ -776,6 +776,7 @@ body {
     border-radius: 32px;
     aspect-ratio: 405 / 270;
     object-fit: cover;
+    border: 2px solid #000;
   }
   .blog-card .card-content {
     display: flex;
@@ -794,6 +795,7 @@ body {
     background-color: rgba(12, 0, 4, 0.05);
     padding: var(--space-1) var(--space-2);
     border-radius: 4px;
+    border: 1px solid black;
   }
   .blog-card h3 {
     font-size: var(--font-size-h3);
@@ -1119,7 +1121,7 @@ body {
     padding: var(--space-2) var(--space-3);
     border: 1.5px solid var(--color-gray-200);
     border-radius: 10px;
-    background: var(--color-gray-200);
+    background: var(--color-text-light);
     color: var(--color-text-dark);
     margin-bottom: 0;
     box-shadow: none;
@@ -1195,7 +1197,7 @@ body {
     padding: var(--space-2) var(--space-3);
     border: 1.5px solid var(--color-gray-200);
     border-radius: 10px;
-    background: var(--color-gray-200);
+    background: var(--color-text-light);
     color: var(--color-text-dark);
     box-shadow: none;
     outline: none;
@@ -1241,13 +1243,6 @@ body {
     gap: var(--space-8);
   }
 
-  .portfolio-section .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-8);
-  }
-  
   .portfolio-filters {
     display: flex;
     flex-wrap: wrap;
@@ -1279,4 +1274,50 @@ body {
     border-color: var(--color-accent);
     color: var(--color-text-light);
     box-shadow: var(--hover-shadow-accent);
+  }
+
+  .btn-link-blog {
+    width: 36%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.48em;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.5em 0.8em;
+    font-size: 1em;
+    font-family: inherit;
+    text-decoration: none;
+    box-shadow: none;
+    transition: background 0.3s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    outline: var(--color-text-dark);
+    background: var(--color-text-dark);
+    color: var(--color-text-light);
+    border-color: var(--color-text-dark);
+  }
+
+  .btn-link-blog:hover {
+    background: var(--color-accent) !important;
+    color: var(--color-text-light) !important;
+    border-color: var(--color-accent) !important;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  .btn-link-blog img {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    transition: filter 0.2s;
+  }
+
+  .btn-link-blog:hover img, .btn-link-blog img {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  .btn-link-blog .project-arrow {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
   }

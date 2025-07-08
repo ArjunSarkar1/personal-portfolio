@@ -53,6 +53,8 @@ export default function PortfolioSection({ projects }) {
               key={category}
               className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
               onClick={() => handleFilterChange(category)}
+              aria-pressed={activeFilter === category}
+              aria-label={category === 'all' ? 'Show all projects' : `Filter by ${category}`}
             >
               {category === 'all' ? 'All Projects' : category}
             </button>
@@ -70,7 +72,7 @@ export default function PortfolioSection({ projects }) {
               }
               return (
                 <article className="project-card" key={project.title} data-project-card>
-                  <img src={imageSrc} alt={project.title} />
+                  <img src={imageSrc} alt={project.title} loading="lazy" width="100%" height="auto" />
                   <div className="card-content">
                     <h3>{project.title}</h3>
                     <div className="project-meta">
@@ -103,7 +105,7 @@ export default function PortfolioSection({ projects }) {
           </div>
         </div>
         {showViewMore && (
-          <button id="view-more-projects" className="btn" onClick={handleViewMore}>
+          <button id="view-more-projects" className="btn" onClick={handleViewMore} aria-label="Show more projects">
             View More
           </button>
         )}

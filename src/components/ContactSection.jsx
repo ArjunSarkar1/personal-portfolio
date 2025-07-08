@@ -81,8 +81,8 @@ export default function ContactSection({ contact }) {
                 required
               />
               <button type="submit" className="btn btn-primary">Send Message</button>
-              {submitted && <div className="form-notice">Thank you! Your message has been received.</div>}
-              {error && <div className="form-notice" style={{ color: 'red', background: '#fff0f0', borderColor: 'red' }}>{error}</div>}
+              {submitted && <div className="form-notice" aria-live="polite">Thank you! Your message has been received.</div>}
+              {error && <div className="form-notice" aria-live="polite" style={{ color: 'red', background: '#fff0f0', borderColor: 'red' }}>{error}</div>}
             </form>
           </div>
           <div className="contact-side-image right">
