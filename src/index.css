@@ -919,7 +919,7 @@ body {
   }
   .footer-links-area {
     display: flex;
-    gap: var(--space-5);
+    gap: var(--space-6);
   }
   .footer-col {
     display: flex;
@@ -1321,3 +1321,37 @@ body {
     height: 1.2em;
     vertical-align: middle;
   }
+
+  @media (max-width: 1024px) {
+    .photo-credits {
+      display: none !important;
+    }
+  }
+
+.btn-link-blog,
+.btn-link-light,
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .btn-link-blog,
+  .btn-link-light,
+  .btn {
+    width: 100% !important;
+    min-width: 0;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.08em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .btn-link-blog img,
+  .btn-link-light img {
+    margin-left: 0.5em;
+  }
+}

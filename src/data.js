@@ -23,23 +23,23 @@ export const hero = {
 export const coreSkills = [
   {
     icon: 'system.svg',
-    title: 'Software Development & System Design',
-    description: 'I architect and build robust, scalable systems that handle real-world demands. From healthcare platforms to productivity tools, I deliver solutions that users can depend on every day.'
+    title: 'Software Development',
+    description: 'I write maintainable, scalable code and design systems that are built to last. Comfortable with both object-oriented and functional paradigms, and experienced in full software lifecycles.'
   },
   {
     icon: 'data-analysis.svg',
     title: 'Data Analysis & Visualization',
-    description: 'I transform raw data into actionable insights that drive decision-making. Whether analyzing user behavior or business metrics, I create clear visualizations that tell compelling stories.'
+    description: 'Strong at breaking down complex datasets to extract insights. I use tools like Python (pandas, matplotlib, seaborn) and SQL to clean, analyze, and visualize data in meaningful ways.'
   },
   {
     icon: 'web-ux.svg',
     title: 'Web Development & UX',
-    description: 'I craft intuitive, high-performance web experiences that users love. Every application I build prioritizes accessibility, responsiveness, and seamless user journeys.'
+    description: 'Solid understanding in building responsive, accessible web apps with modern stacks like React and Tailwind. I care about performance and intuitive design.'
   },
   {
     icon: 'machine-learning.svg',
     title: 'Machine Learning & AI',
-    description: 'I develop intelligent systems that learn and adapt. From sentiment analysis to bias-free hiring platforms, I create AI solutions that make a meaningful impact.'
+    description: 'Hands-on experience with training models, working with embeddings, and integrating ML into real-world applications. Familiar with tools like scikit-learn, Hugging Face, and OpenAI APIs.'
   },
 ];
 
@@ -146,10 +146,10 @@ export const contact = {
 };
 
 export const footerLinks = {
-  quick: ['About Me', 'Contact', 'Services', 'Blog'],
-  extracurricular: ['Research Papers', 'Hackathons', 'Volunteering', 'Hobbies'],
+  quick: ['About Me', 'Blog', 'Contact', 'Services'],
+  extracurricular: ['Hackathons', 'Hobbies', 'Research Papers', 'Volunteering'],
   follow: [
-    { label: 'LinkedIn', icon: 'linkedin.svg', url: 'https://www.linkedin.com/in/arjunsarkar101/' },
     { label: 'Github', icon: 'github.svg', url: 'https://github.com/ArjunSarkar1' },
+    { label: 'LinkedIn', icon: 'linkedin.svg', url: 'https://www.linkedin.com/in/arjunsarkar101/' },
   ],
 }; 
