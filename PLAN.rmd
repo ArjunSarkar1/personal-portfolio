@@ -1,0 +1,348 @@
+# Project Plan: React Neobrutalistic Portfolio Conversion
+
+## Objective
+Transform the current static portfolio into a modern, neobrutalistic React-based portfolio, extracting and reusing all key personal, skills, project, and contact information from the existing codebase.
+
+## Key Information Extracted
+- **Name:** Arjun Sarkar
+- **Bio:** Passionate computer science student dedicated to exploring innovative solutions through technology.
+- **Interests:** AI, Entrepreneurship, Data Analysis
+- **Skills:**
+  - Software Development & System Design
+  - Data Analysis & Visualization
+  - Web Development & UX
+  - Machine Learning & AI
+  - Frontend: HTML, CSS, JavaScript, TypeScript, React, Bootstrap, Vite
+  - Backend: Python, Java, C, C++, Swift, R, NodeJS, Unix, Git, GitHub, LaTeX
+  - Data Science: NumPy, Pandas, PyTorch, TensorFlow, scikit-learn, Keras, Matplotlib, Plotly, Scipy, OpenCV
+  - Databases/Cloud: SQLite, Neo4J, Supabase, Vercel
+  - Soft Skills: Communication, Problem-Solving, Adaptability, Learning Agility, Teamwork, Creativity, Focus
+  - Design/Creative: Figma, Canva
+  - Technical Tools: VS Code, Docker, R-Studio
+- **Projects:**
+  - PhysicianConnect (Java, SQLite JDBC, Gradle)
+  - MyToDo (HTML, CSS, JS)
+  - ExeraHiresAI (Swift)
+  - Space Wars (Processing)
+  - Sentiment Multimodal AI (In Progress)
+  - ClipsMaker (Planning)
+- **Blog Topics:**
+  - Understanding AI in Modern Applications
+  - Building Responsive Web Applications
+  - The Future of UX Design
+- **Contact:**
+  - Email: arjuncodes111@gmail.com
+  - Location: Manitoba, Canada
+  - LinkedIn: https://www.linkedin.com/in/arjunsarkar101/
+  - Github: https://github.com/ArjunSarkar1
+
+## Web Content Structure & Layout
+
+### 1. Navigation Bar
+- Fixed at the top, neobrutalistic style (bold borders, high contrast, pill-shaped links)
+- Links to: About Me, Skills, Portfolio, Blog, Connect
+- Uses SVG icons for each section
+- Responsive: collapses or scrolls on mobile
+
+### 2. Hero Section (About Me)
+- Large name/title, short bio, interests
+- Background image (rotating or static)
+- Photo credits
+- Optionally, a call-to-action (e.g., "View Portfolio")
+
+### 3. Skills Section
+- Core competencies as cards or grid
+- Detailed skills grouped by category (Frontend, Backend, Data Science, etc.)
+- Interactive skill tags (hover effects)
+
+### 4. Portfolio Section
+- Grid of project cards
+- Each card: image, title, date, status, description, tags, and optional link
+- "View More" button to expand/collapse projects
+
+### 5. Blog Section
+- Grid/list of blog cards
+- Each card: image, category tag, read time, title, short description, and link
+- "View More" button for additional posts
+
+### 6. Contact Section
+- Contact details: email, location, LinkedIn, Github
+- Contact form (optional, for future expansion)
+- Large background image or illustration
+
+### 7. Footer
+- Quick links, extracurriculars, social links
+- Newsletter subscription form
+- Copyright and legal links
+
+## Step 1: Extracted Data Structures for React
+
+```js
+// Navigation Links
+const navLinks = [
+  { label: 'About Me', icon: 'profile.svg', href: '#hero' },
+  { label: 'Skills', icon: 'skills.svg', href: '#skills' },
+  { label: 'Portfolio', icon: 'portfolio.svg', href: '#portfolio' },
+  { label: 'Blog', icon: 'blog.svg', href: '#blog' },
+  { label: 'Connect', icon: 'connect.svg', href: '#contact' },
+];
+
+// Hero Section
+const hero = {
+  name: 'Arjun Sarkar',
+  bio: 'I am a passionate computer science student dedicated to exploring innovative solutions through technology. Dive into my projects and insights on my journey in the tech world.',
+  interests: ['AI', 'Entrepreneurship', 'Data Analysis'],
+  backgroundImage: 'background0.jpg',
+  photoCredits: [
+    { name: 'Pexels', url: 'https://www.pexels.com' },
+    { name: 'Unsplash', url: 'https://unsplash.com' },
+  ],
+};
+
+// Skills Section
+const coreSkills = [
+  {
+    icon: 'system.svg',
+    title: 'Software Development & System Design',
+    description: 'I write maintainable, scalable code and design systems that are built to last. Comfortable with both object-oriented and functional paradigms, and experienced in full software lifecycles.'
+  },
+  {
+    icon: 'data-analysis.svg',
+    title: 'Data Analysis & Visualization',
+    description: 'Strong at breaking down complex datasets to extract insights. I use tools like Python (pandas, matplotlib, seaborn) and SQL to clean, analyze, and visualize data in meaningful ways.'
+  },
+  {
+    icon: 'web-ux.svg',
+    title: 'Web Development & UX',
+    description: 'Solid understanding in building responsive, accessible web apps with modern stacks like React and Tailwind. I care about performance and intuitive design.'
+  },
+  {
+    icon: 'machine-learning.svg',
+    title: 'Machine Learning & AI',
+    description: 'Hands-on experience with training models, working with embeddings, and integrating ML into real-world applications. Familiar with tools like scikit-learn, Hugging Face, and OpenAI APIs.'
+  },
+];
+
+const detailedSkills = [
+  { category: 'Frontend Development', skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Bootstrap', 'Vite'] },
+  { category: 'Backend & Systems', skills: ['Python', 'Java', 'C', 'C++', 'Swift', 'R', 'NodeJS', 'Unix', 'Git', 'GitHub', 'LaTeX'] },
+  { category: 'Data Science & ML', skills: ['NumPy', 'Pandas', 'PyTorch', 'TensorFlow', 'scikit-learn', 'Keras', 'Matplotlib', 'Plotly', 'Scipy', 'OpenCV'] },
+  { category: 'Databases & Cloud', skills: ['SQLite', 'Neo4J', 'Supabase', 'Vercel'] },
+  { category: 'Soft Skills', skills: ['Communication', 'Problem-Solving', 'Adaptability', 'Learning Agility', 'Teamwork', 'Creativity', 'Focus'] },
+  { category: 'Design & Creative Tools', skills: ['Figma', 'Canva'] },
+  { category: 'Technical Tools', skills: ['VS Code', 'Docker', 'R-Studio'] },
+];
+
+// Portfolio Section
+const projects = [
+  {
+    title: 'PhysicianConnect',
+    image: 'portfolio/p1/login.png',
+    date: 'May - June 2025',
+    status: 'Completed',
+    description: 'A platform that simplifies communication between patients, physicians, and receptionists.',
+    tags: ['desktop-application', 'healthcare', 'communication', 'Java, SQLite JDBC, Gradle'],
+    link: 'https://github.com/ArjunSarkar1/PhysiciansConnect',
+  },
+  {
+    title: 'MyToDo',
+    image: 'portfolio/p2/productImg.png',
+    date: 'June 2025',
+    status: 'Completed',
+    description: 'A simple task management app for users to stay organized.',
+    tags: ['web-development', 'pomodoro', 'productivity', 'HTML, CSS, JS'],
+    link: 'https://arjunsarkar1.github.io/MyToDo/',
+  },
+  {
+    title: 'ExeraHiresAI',
+    image: 'portfolio/p3/candidates.png',
+    date: 'December 2024',
+    status: 'Completed',
+    description: 'A prototype of a DEI compliant IOS App for HR professionals to eliminate bias and maintain diversity in an organization.',
+    tags: ['talent-acquisition', 'hr-platform', 'people-analytics', 'dei', 'Swift'],
+    link: 'https://github.com/ArjunSarkar1/ExeraHiresAI/',
+  },
+  {
+    title: 'Space Wars',
+    image: 'portfolio/p4/space.png',
+    date: 'January 2025',
+    status: 'Completed',
+    description: 'A fun space invader game.',
+    tags: ['game-development', 'space-shooter', 'graphics-pipeline', 'Processing'],
+    link: 'https://github.com/ArjunSarkar1/SpaceWar',
+  },
+  {
+    title: 'Sentiment Multimodal AI',
+    image: 'svg/loading.svg',
+    date: 'July - Present',
+    status: 'In Progress',
+    description: 'Loading...'
+  },
+  {
+    title: 'ClipsMaker',
+    image: 'svg/loading.svg',
+    date: 'TBD',
+    status: 'Planning',
+    description: 'Loading...'
+  },
+];
+
+// Blog Section
+const blogs = [
+  {
+    image: 'blog1.png',
+    tag: 'Tech',
+    readTime: '5 min read',
+    title: 'Understanding AI in Modern Applications',
+    description: 'A deep dive into how AI is transforming industries today.',
+    link: '#'
+  },
+  {
+    image: 'blog2.png',
+    tag: 'Development',
+    readTime: '5 min read',
+    title: 'Building Responsive Web Applications',
+    description: 'Learn how to create web apps that adapt to any device.',
+    link: '#'
+  },
+  {
+    image: 'blog3.png',
+    tag: 'Design',
+    readTime: '5 min read',
+    title: 'The Future of UX Design',
+    description: 'Discover the trends shaping user experience in the digital age.',
+    link: '#'
+  },
+];
+
+// Contact Section
+const contact = {
+  email: 'arjuncodes111@gmail.com',
+  location: 'Manitoba, Canada',
+  linkedin: 'https://www.linkedin.com/in/arjunsarkar101/',
+  github: 'https://github.com/ArjunSarkar1',
+  image: 'background/background3.jpg',
+};
+
+// Footer Links
+const footerLinks = {
+  quick: ['About Me', 'Contact', 'Services', 'Blog'],
+  extracurricular: ['Research Papers', 'Hackathons', 'Volunteering', 'Hobbies'],
+  follow: [
+    { label: 'LinkedIn', icon: 'linkedin.svg', url: 'https://www.linkedin.com/in/arjunsarkar101/' },
+    { label: 'Github', icon: 'github.svg', url: 'https://github.com/ArjunSarkar1' },
+  ],
+};
+```
+
+## Step 2: Neobrutalistic UI Design System & Component Structure
+
+### Neobrutalistic Design System
+- **Colors:**
+  - Primary Dark: #0c0004
+  - Primary Light: #fff4e5
+  - Surface Dark: #24191d
+  - Text Light: #ffffff
+  - Text Dark: #0c0004
+  - Accent: #0053cc
+- **Typography:**
+  - Headings: 'Outfit', sans-serif; large, bold, uppercase or all-caps for section titles
+  - Body: 'Inter', sans-serif; readable, medium weight
+- **Borders:**
+  - Thick, high-contrast borders (2-4px), often black or accent color
+  - Rounded corners (16-32px for cards, 999px for pills/buttons)
+- **Shadows:**
+  - Visible, hard-edged drop shadows for cards and floating elements
+- **Buttons/Tags:**
+  - Pill-shaped, bold, with strong hover/focus states
+- **Backgrounds:**
+  - Flat color blocks, minimal gradients, playful overlays
+- **Spacing:**
+  - Generous padding/margins, clear separation between sections
+- **Other:**
+  - SVG icons with bold outlines, minimal color fills
+  - Responsive grid/flex layouts
+
+### Reusable React Components
+
+#### 1. `Navbar`
+- **Props:** `links` (array), `logo` (optional)
+- **Features:** Fixed top, SVG icons, responsive, neobrutalistic border/shadow
+
+#### 2. `HeroSection`
+- **Props:** `name`, `bio`, `interests`, `backgroundImage`, `photoCredits`
+- **Features:** Large heading, background image, interests as tags, photo credits overlay
+
+#### 3. `SkillsSection`
+- **Props:** `coreSkills` (array), `detailedSkills` (array)
+- **Features:** Grid of skill cards, interactive tags, grouped skill categories
+
+#### 4. `PortfolioSection`
+- **Props:** `projects` (array)
+- **Features:** Project cards with image, title, date, status, tags, link; expandable/collapsible
+
+#### 5. `BlogSection`
+- **Props:** `blogs` (array)
+- **Features:** Blog cards with image, tag, read time, title, description, link; expandable
+
+#### 6. `ContactSection`
+- **Props:** `contact` (object)
+- **Features:** Email, location, LinkedIn, Github, large background image, (optional form)
+
+#### 7. `Footer`
+- **Props:** `footerLinks` (object)
+- **Features:** Quick links, extracurriculars, social links, newsletter form, copyright
+
+#### 8. `Button`, `Tag`, `Card`, `SectionTitle` (UI primitives)
+- **Props:** Vary by component; used for consistent neobrutalistic style
+
+### Component Hierarchy Example
+
+```
+<App>
+  <Navbar links={navLinks} />
+  <HeroSection {...hero} />
+  <SkillsSection coreSkills={coreSkills} detailedSkills={detailedSkills} />
+  <PortfolioSection projects={projects} />
+  <BlogSection blogs={blogs} />
+  <ContactSection contact={contact} />
+  <Footer footerLinks={footerLinks} />
+</App>
+```
+
+---
+
+## Layout Principles
+- Neobrutalistic: bold borders, high-contrast backgrounds, large headings, playful but readable fonts, minimal gradients, visible shadows
+- Responsive: mobile-first, grid/flex layouts
+- Accessible: semantic HTML, keyboard navigation, alt text for images
+
+## Steps
+1. **Extract and Structure Data** ✅
+2. **Design Neobrutalistic UI** ✅
+3. **Implement React Components** ✅
+   - Build each section as a functional component, using the structured data.
+   - Use React state/props for dynamic content (e.g., project filtering, blog expansion).
+4. **Integrate Assets** ✅
+   - Reuse SVGs and images from `src/assets`.
+   - Ensure all images/icons are imported and referenced correctly in React.
+5. **Styling** ✅
+   - Used CSS from the original project as a base, adapting it for React components.
+   - Applied neobrutalistic styles: bold borders, high-contrast backgrounds, large headings, playful but readable fonts, visible shadows, and pill-shaped buttons/tags.
+   - Ensured mobile responsiveness with media queries and flexible layouts (grid/flex).
+   - Maintained accessibility: semantic HTML, keyboard navigation, alt text for images, and color contrast.
+6. **Testing & Polish** ✅
+   - Reviewed all React components for correct rendering and data flow.
+   - Ensured all images, icons, and links display and function as intended.
+   - Checked visual appeal: consistent neobrutalistic style, spacing, and alignment.
+   - Verified responsiveness on desktop and mobile breakpoints.
+   - Confirmed accessibility: alt text, keyboard navigation, color contrast.
+   - Polished button, card, and tag interactions (hover/focus states, transitions).
+7. **Documentation**
+   - Update README with new structure and usage instructions.
+
+## Deliverables
+- Fully functional React portfolio with neobrutalistic design
+- All personal, skills, project, and contact info accurately represented
+- Modern, responsive, and accessible UI
+- Clean, maintainable codebase 

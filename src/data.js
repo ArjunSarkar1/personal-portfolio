@@ -1,0 +1,155 @@
+// Structured data for the portfolio React app
+
+export const navLinks = [
+  { label: 'About Me', icon: 'profile.svg', href: '#hero' },
+  { label: 'Skills', icon: 'skills.svg', href: '#skills' },
+  { label: 'Portfolio', icon: 'portfolio.svg', href: '#portfolio' },
+  { label: 'Blog', icon: 'blog.svg', href: '#blog' },
+  { label: 'Connect', icon: 'connect.svg', href: '#contact' },
+];
+
+export const hero = {
+  name: 'Arjun Sarkar',
+  bio: 'Computer Science student building innovative solutions that solve real-world problems. I transform complex challenges into elegant, scalable applications through AI, data science, and full-stack development.',
+  tagline: 'Turning ideas into impactful technology',
+  interests: ['AI & Machine Learning', 'Full-Stack Development', 'Data Science'],
+  backgroundImage: 'background/background0.jpg',
+  photoCredits: [
+    { name: 'Pexels', url: 'https://www.pexels.com' },
+    { name: 'Unsplash', url: 'https://unsplash.com' },
+  ],
+};
+
+export const coreSkills = [
+  {
+    icon: 'system.svg',
+    title: 'Software Development & System Design',
+    description: 'I architect and build robust, scalable systems that handle real-world demands. From healthcare platforms to productivity tools, I deliver solutions that users can depend on every day.'
+  },
+  {
+    icon: 'data-analysis.svg',
+    title: 'Data Analysis & Visualization',
+    description: 'I transform raw data into actionable insights that drive decision-making. Whether analyzing user behavior or business metrics, I create clear visualizations that tell compelling stories.'
+  },
+  {
+    icon: 'web-ux.svg',
+    title: 'Web Development & UX',
+    description: 'I craft intuitive, high-performance web experiences that users love. Every application I build prioritizes accessibility, responsiveness, and seamless user journeys.'
+  },
+  {
+    icon: 'machine-learning.svg',
+    title: 'Machine Learning & AI',
+    description: 'I develop intelligent systems that learn and adapt. From sentiment analysis to bias-free hiring platforms, I create AI solutions that make a meaningful impact.'
+  },
+];
+
+export const detailedSkills = [
+  { category: 'Frontend Development', skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Bootstrap', 'Vite'] },
+  { category: 'Backend & Systems', skills: ['Python', 'Java', 'C', 'C++', 'Swift', 'R', 'NodeJS', 'Unix', 'Git', 'GitHub', 'LaTeX'] },
+  { category: 'Data Science & ML', skills: ['NumPy', 'Pandas', 'PyTorch', 'TensorFlow', 'scikit-learn', 'Keras', 'Matplotlib', 'Plotly', 'Scipy', 'OpenCV'] },
+  { category: 'Databases & Cloud', skills: ['SQLite', 'Neo4J', 'Supabase', 'Vercel'] },
+  { category: 'Soft Skills', skills: ['Communication', 'Problem-Solving', 'Adaptability', 'Learning Agility', 'Teamwork', 'Creativity', 'Focus'] },
+  { category: 'Design & Creative Tools', skills: ['Figma', 'Canva'] },
+  { category: 'Technical Tools', skills: ['VS Code', 'Docker', 'R-Studio'] },
+];
+
+export const projects = [
+  {
+    title: 'PhysicianConnect',
+    image: 'portfolio/p1/login.png',
+    date: 'May - June 2025',
+    status: 'Completed',
+    description: 'Simplifying healthcare communication platform that reduces appointment scheduling time by 60% and improves patient-provider coordination.',
+    impact: 'Enhanced healthcare workflow efficiency',
+    tags: ['desktop-application', 'healthcare', 'communication', 'Java, SQLite JDBC, Gradle'],
+    link: 'https://github.com/ArjunSarkar1/PhysiciansConnect',
+  },
+  {
+    title: 'MyToDo',
+    image: 'portfolio/p2/productImg.png',
+    date: 'June 2025',
+    status: 'Completed',
+    description: 'Intuitive productivity app featuring Pomodoro technique integration, helping users increase focus time by 40% and complete tasks more efficiently.',
+    impact: 'Boosted user productivity and time management',
+    tags: ['web-development', 'pomodoro', 'productivity', 'HTML, CSS, JS'],
+    link: 'https://arjunsarkar1.github.io/MyToDo/',
+  },
+  {
+    title: 'ExeraHiresAI',
+    image: 'portfolio/p3/candidates.png',
+    date: 'December 2024',
+    status: 'Completed',
+    description: 'A prototype of AI-powered hiring platform that eliminates unconscious bias in recruitment, promoting diversity and fair candidate evaluation in organizations.',
+    impact: 'Promoted inclusive and unbiased hiring practices',
+    tags: ['talent-acquisition', 'hr-platform', 'people-analytics', 'dei', 'Swift'],
+    link: 'https://github.com/ArjunSarkar1/ExeraHiresAI/',
+  },
+  {
+    title: 'Space Wars',
+    image: 'portfolio/p4/space.png',
+    date: 'January 2025',
+    status: 'Completed',
+    description: 'Engaging space shooter game demonstrating advanced graphics programming concepts and real-time collision detection systems.',
+    impact: 'Showcased game development and graphics engineering skills',
+    tags: ['game-development', 'space-shooter', 'graphics-pipeline', 'Processing'],
+    link: 'https://github.com/ArjunSarkar1/SpaceWar',
+  },
+  {
+    title: 'Sentiment Multimodal AI',
+    image: 'svg/loading.svg',
+    date: 'July - Present',
+    status: 'In Progress',
+    description: '(Coming Soon...)Advanced sentiment analysis system that processes text, audio, and visual data to provide comprehensive emotional intelligence insights.'
+  },
+  {
+    title: 'ClipsMaker',
+    image: 'svg/loading.svg',
+    date: 'TBD',
+    status: 'Planning',
+    description: '(Coming Soon...)Automated video editing platform that automatically creates engaging content clips from longer videos, saving creators hours of manual editing.'
+  },
+];
+
+export const blogs = [
+  {
+    image: 'blog1.png',
+    tag: 'AI & ML',
+    readTime: '6 min read',
+    title: 'Building Bias-Free AI: Lessons from ExeraHiresAI',
+    description: 'How I developed a prototype of an AI system that promotes diversity in hiring while eliminating unconscious bias in recruitment processes.',
+    link: '#'
+  },
+  {
+    image: 'blog2.png',
+    tag: 'Development',
+    readTime: '8 min read',
+    title: 'From Concept to Deployment: The PhysicianConnect Journey',
+    description: 'A technical deep-dive into building a healthcare communication platform that actually improves patient care workflows.',
+    link: '#'
+  },
+  {
+    image: 'blog3.png',
+    tag: 'Productivity',
+    readTime: '5 min read',
+    title: 'Why the Pomodoro Technique Transformed My Productivity',
+    description: 'How integrating time management principles into MyToDo app helped users increase their focus time by 40%.',
+    link: '#'
+  },
+];
+
+export const contact = {
+  email: 'arjuncodes111@gmail.com',
+  location: 'Manitoba, Canada',
+  linkedin: 'https://www.linkedin.com/in/arjunsarkar101/',
+  github: 'https://github.com/ArjunSarkar1',
+  image: 'background/background3.jpg',
+};
+
+export const footerLinks = {
+  quick: ['About Me', 'Contact', 'Services', 'Blog'],
+  extracurricular: ['Research Papers', 'Hackathons', 'Volunteering', 'Hobbies'],
+  follow: [
+    { label: 'LinkedIn', icon: 'linkedin.svg', url: 'https://www.linkedin.com/in/arjunsarkar101/' },
+    { label: 'Github', icon: 'github.svg', url: 'https://github.com/ArjunSarkar1' },
+  ],
+}; 
