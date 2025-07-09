@@ -1153,16 +1153,40 @@ body {
   }
 
   .form-notice {
-    margin-top: var(--space-2);
-    font-size: 1rem;
-    color: var(--color-accent);
-    background: var(--color-info-bg);
-    border: none;
-    border-radius: 8px;
-    padding: var(--space-2) var(--space-3);
-    box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.08);
+    margin-top: var(--space-3);
+    font-size: 1.1rem;
+    color: #059669;
+    background: #ecfdf5;
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: var(--space-3) var(--space-4);
+    box-shadow: 0 4px 12px 0 rgba(16, 185, 129, 0.15);
     font-weight: 600;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeInUp 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-notice::before {
+    content: "✓";
+    margin-right: var(--space-2);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .contact-form label {

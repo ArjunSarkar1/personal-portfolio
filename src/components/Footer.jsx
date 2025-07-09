@@ -81,9 +81,6 @@ export default function Footer({ footerLinks }) {
             >
               Subscribe on Medium
             </a>
-            <p className="form-notice" aria-live="polite">
-              You’ll be redirected to Medium to complete your subscription.
-            </p>
           </div>
         </div>
         <hr className="footer-divider" />

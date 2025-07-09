@@ -121,19 +121,19 @@ export const blogs = [
   },
   {
     image: 'blog2.jpg',
-    tag: 'Development',
-    readTime: '8 min read',
-    title: 'From Concept to Deployment: The PhysicianConnect Journey',
-    description: 'A technical deep-dive into building a healthcare communication platform that actually improves patient care workflows.',
-    link: '#'
+    tag: 'Productivity',
+    readTime: '4 min read',
+    title: 'Why the Pomodoro Technique Transformed My Productivity',
+    description: 'How integrating time management principles into MyToDo app helped users increase their focus time by 40%.',
+    link: 'https://medium.com/@arjunsarkar82/building-mytodo-a-simple-app-that-taught-me-a-lot-b34c3d17387c'
   },
   {
     image: 'blog3.jpg',
-    tag: 'Productivity',
-    readTime: '5 min read',
-    title: 'Why the Pomodoro Technique Transformed My Productivity',
-    description: 'How integrating time management principles into MyToDo app helped users increase their focus time by 40%.',
-    link: '#'
+    tag: 'Ethics',
+    readTime: '6 min read',
+    title: 'Will Artificial Intelligence Ever Grasp Human Emotions Completely?',
+    description: 'I analyze the potential and drawbacks of emotional AI in our daily lives, and whether AI can understand human emotions or if it is just imitating empathy.',
+    link: 'https://medium.com/@arjunsarkar82/can-ai-ever-truly-understand-human-emotions-832a392f633f'
   },
 ];
 

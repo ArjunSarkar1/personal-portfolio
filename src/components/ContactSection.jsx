@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import emailjs from '@emailjs/browser';
 
@@ -14,6 +14,18 @@ export default function ContactSection({ contact }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => setSubmitted(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('NDkUfLlqeRZxc5uAe');
+  }, []);
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -27,9 +39,9 @@ export default function ContactSection({ contact }) {
       {
         from_name: form.name,
         from_email: form.email,
-        message: form.message,
+        message: form.message
       },
-      'NDkUfLlqeRZxc5uAe' // <-- replace with your EmailJS public key
+      'NDkUfLlqeRZxc5uAe' // <-- replace with EmailJS public key
     )
     .then(() => {
       setSubmitted(true);

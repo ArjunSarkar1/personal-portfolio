@@ -10,7 +10,7 @@ export default function BlogSection({ blogs }) {
   // Color coding for tags
   const tagStyles = {
     'AI & ML': { background: '#e0f7fa', color: '#006064' },
-    'Development': { background: '#ffe9c6', color: '#e65100' },
+    'Ethics': { background: '#ffe9c6', color: '#e65100' },
     'Productivity': { background: '#f3e5f5', color: '#6a1b9a' },
     // Add more tag styles as needed
   };
