@@ -114,13 +114,13 @@ export const blogs = [
   {
     image: 'blog1.png',
     tag: 'AI & ML',
-    readTime: '6 min read',
+    readTime: '4 min read',
     title: 'Building Bias-Free AI: Lessons from ExeraHiresAI',
     description: 'How I developed a prototype of an AI system that promotes diversity in hiring while eliminating unconscious bias in recruitment processes.',
-    link: '#'
+    link: 'https://medium.com/@arjunsarkar82/building-bias-free-hr-ai-platform-239b26f3fe56'
   },
   {
-    image: 'blog2.png',
+    image: 'blog2.jpg',
     tag: 'Development',
     readTime: '8 min read',
     title: 'From Concept to Deployment: The PhysicianConnect Journey',
@@ -128,7 +128,7 @@ export const blogs = [
     link: '#'
   },
   {
-    image: 'blog3.png',
+    image: 'blog3.jpg',
     tag: 'Productivity',
     readTime: '5 min read',
     title: 'Why the Pomodoro Technique Transformed My Productivity',
@@ -146,10 +146,11 @@ export const contact = {
 };
 
 export const footerLinks = {
-  quick: ['About Me', 'Blog', 'Contact', 'Services'],
+  quick: ['About Me', 'Blog', 'Contact'],
   extracurricular: ['Hackathons', 'Hobbies', 'Research Papers', 'Volunteering'],
   follow: [
     { label: 'Github', icon: 'github.svg', url: 'https://github.com/ArjunSarkar1' },
     { label: 'LinkedIn', icon: 'linkedin.svg', url: 'https://www.linkedin.com/in/arjunsarkar101/' },
+    { label: 'Medium', icon: 'medium.svg', url: 'https://medium.com/@arjunsarkar82' },
   ],
 }; 

@@ -4,7 +4,10 @@ export function useSmoothScroll() {
   useEffect(() => {
     const handleNavClick = (e) => {
       // Check if it's a navigation link with hash
-      if (e.target.closest('.main-nav a[href^="#"]')) {
+      if (
+        e.target.closest('.main-nav a[href^="#"]') ||
+        e.target.closest('.footer-smooth-scroll')
+      ) {
         e.preventDefault();
         const targetId = e.target.closest('a').getAttribute('href');
         const targetSection = document.querySelector(targetId);

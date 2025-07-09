@@ -14,9 +14,24 @@ export default function Footer({ footerLinks }) {
             <div className="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                {footerLinks.quick.map(link => (
-                  <li key={link}><a href="#">{link}</a></li>
-                ))}
+                {footerLinks.quick.map(link => {
+                  let href = '#';
+                  if (link === 'About Me') href = '#hero';
+                  else if (link === 'Blog') href = 'https://medium.com/@arjunsarkar82';
+                  else if (link === 'Contact') href = '#contact';
+                  return (
+                    <li key={link}>
+                      <a
+                        href={href}
+                        className={['About Me', 'Contact'].includes(link) ? 'footer-smooth-scroll' : undefined}
+                        target={link === 'Blog' ? '_blank' : undefined}
+                        rel={link === 'Blog' ? 'noopener noreferrer' : undefined}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="footer-col">
@@ -57,21 +72,26 @@ export default function Footer({ footerLinks }) {
           <div className="footer-newsletter">
             <h4>Join</h4>
             <p>Subscribe to my newsletter to get the latest updates from my blog.</p>
-            <form className="newsletter-form">
-              <label htmlFor="newsletter-email" style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>Email address</label>
-              <input id="newsletter-email" type="email" placeholder="Your email here" />
-              <button type="submit" className="btn">Subscribe</button>
-            </form>
-            <p className="form-notice" aria-live="polite">By subscribing, you consent to our Privacy Policy and agree to receive updates.</p>
+            <a
+              href="https://medium.com/subscribe/@arjunsarkar82?source=publishing_settings---user_settings-----------------------------------------"
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginTop: '16px', display: 'inline-block' }}
+            >
+              Subscribe on Medium
+            </a>
+            <p className="form-notice" aria-live="polite">
+              You’ll be redirected to Medium to complete your subscription.
+            </p>
           </div>
         </div>
         <hr className="footer-divider" />
         <div className="footer-bottom">
           <div className="footer-credits">
             <p>© 2025 Arjun Sarkar. All rights reserved.</p>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Settings</a>
+            {/* <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Settings</a> */}
           </div>
         </div>
       </div>

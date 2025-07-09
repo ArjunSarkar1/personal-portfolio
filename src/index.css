@@ -1008,12 +1008,17 @@ body {
   }
   .footer-credits {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-4);
+    justify-content: center;
+    gap: var(--space-2);
     font-size: var(--font-size-small);
     line-height: var(--line-height-normal);
     opacity: 0.7;
+    width: 100%;
+    text-align: center;
   }
+  
   .footer-social {
     display: flex;
     gap: var(--space-3);
@@ -1393,4 +1398,20 @@ body {
   font-size: var(--font-size-body);
   color: var(--color-text-light);
   font-weight: var(--font-weight-medium);
+}
+
+/* Newsletter subscribe button custom color */
+.footer-newsletter .btn {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-light);
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.footer-newsletter .btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: var(--color-text-light);
+  transform: var(--hover-lift);
 }

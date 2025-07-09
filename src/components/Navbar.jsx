@@ -11,7 +11,8 @@ export default function Navbar({ links }) {
         <nav className="main-nav" aria-label="Main navigation">
           {links.map(link => (
             <a key={link.label} href={link.href} className="nav-link" role="link" tabIndex={0}>
-              <img src={new URL(`../assets/svg/${link.icon}`, import.meta.url).href} alt={link.label} className="nav-icon" />
+              <img src={new URL(`../assets/svg/${link.icon}`, import.
+                meta.url).href} alt={link.label} className="nav-icon" />
               {link.label}
             </a>
           ))}
