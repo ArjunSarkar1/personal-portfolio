@@ -3,9 +3,33 @@ import '../App.css';
 import footerPic from '../assets/images/footer/footer-pic.png';
 import mailIcon from '../assets/svg/mail.svg';
 import locationIcon from '../assets/svg/location-pin.svg';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 // Usage: <Footer footerLinks={footerLinks} />
 export default function Footer({ footerLinks }) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Helper to handle navigation and smooth scroll
+  const handleNavAndScroll = (hash) => (e) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
     <footer id="footer" className="main-footer">
       <div className="container">
@@ -15,31 +39,44 @@ export default function Footer({ footerLinks }) {
               <h4>Quick Links</h4>
               <ul>
                 {footerLinks.quick.map(link => {
-                  let href = '#';
-                  if (link === 'About Me') href = '#hero';
-                  else if (link === 'Blog') href = 'https://medium.com/@arjunsarkar82';
-                  else if (link === 'Contact') href = '#contact';
-                  return (
-                    <li key={link}>
-                      <a
-                        href={href}
-                        className={['About Me', 'Contact'].includes(link) ? 'footer-smooth-scroll' : undefined}
-                        target={link === 'Blog' ? '_blank' : undefined}
-                        rel={link === 'Blog' ? 'noopener noreferrer' : undefined}
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  );
+                  if (link === 'About Me') {
+                    return (
+                      <li key={link}>
+                        <Link to="/" onClick={handleNavAndScroll('#hero')} className="footer-smooth-scroll">{link}</Link>
+                      </li>
+                    );
+                  } else if (link === 'Contact') {
+                    return (
+                      <li key={link}>
+                        <Link to="/" onClick={handleNavAndScroll('#contact')} className="footer-smooth-scroll">{link}</Link>
+                      </li>
+                    );
+                  } else if (link === 'Blog') {
+                    return (
+                      <li key={link}>
+                        <a href="https://medium.com/@arjunsarkar82" target="_blank" rel="noopener noreferrer">{link}</a>
+                      </li>
+                    );
+                  }
+                  return null;
                 })}
               </ul>
             </div>
             <div className="footer-col">
               <h4>Extracurricular</h4>
               <ul>
-                {footerLinks.extracurricular.map(link => (
-                  <li key={link}><a href="#">{link}</a></li>
-                ))}
+                {footerLinks.extracurricular.map(link => {
+                  let to = '/';
+                  if (link === 'Hobbies') to = '/hobbies';
+                  else if (link === 'Hackathons') to = '/hackathons';
+                  else if (link === 'Writings') to = '/writings';
+                  else if (link === 'Volunteering') to = '/volunteering';
+                  return (
+                    <li key={link}>
+                      <Link to={to}>{link}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="footer-col">
@@ -71,7 +108,7 @@ export default function Footer({ footerLinks }) {
           </div>
           <div className="footer-newsletter">
             <h4>Join</h4>
-            <p>Subscribe to my newsletter to get the latest updates from my blog.</p>
+            <p>Subscribe to get the latest updates from my blog.</p>
             <a
               href="https://medium.com/subscribe/@arjunsarkar82?source=publishing_settings---user_settings-----------------------------------------"
               className="btn"
