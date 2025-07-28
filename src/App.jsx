@@ -18,8 +18,13 @@ import PortfolioSection from './components/PortfolioSection.jsx'
 import BlogSection from './components/BlogSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import Footer from './components/Footer.jsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Hobbies from './components/Hobbies.jsx';
+import Hackathons from './components/Hackathons.jsx';
+import Writings from './components/Writings.jsx';
+import Volunteering from './components/Volunteering.jsx';
 
-function App() {
+function MainSections() {
   useSmoothScroll();
   return (
     <>
@@ -31,7 +36,21 @@ function App() {
       <ContactSection contact={contact} />
       <Footer footerLinks={footerLinks} />
     </>
-  )
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainSections />} />
+        <Route path="/hackathons" element={<Hackathons />} />
+        <Route path="/hobbies" element={<Hobbies />} />
+        <Route path="/writings" element={<Writings />} />
+        <Route path="/volunteering" element={<Volunteering />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App

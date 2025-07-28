@@ -147,7 +147,7 @@ export const contact = {
 
 export const footerLinks = {
   quick: ['About Me', 'Blog', 'Contact'],
-  extracurricular: ['Hackathons', 'Hobbies', 'Research Papers', 'Volunteering'],
+  extracurricular: ['Hackathons', 'Hobbies', 'Writings', 'Volunteering'],
   follow: [
     { label: 'Github', icon: 'github.svg', url: 'https://github.com/ArjunSarkar1' },
     { label: 'LinkedIn', icon: 'linkedin.svg', url: 'https://www.linkedin.com/in/arjunsarkar101/' },
