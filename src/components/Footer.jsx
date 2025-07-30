@@ -33,7 +33,9 @@ export default function Footer({ footerLinks }) {
   return (
     <footer id="footer" className="main-footer">
       <div className="container">
+        {/* Main Footer Content */}
         <div className="footer-main">
+          {/* Left Section - Navigation Links */}
           <div className="footer-links-area">
             <div className="footer-col">
               <h4>Quick Links</h4>
@@ -62,6 +64,7 @@ export default function Footer({ footerLinks }) {
                 })}
               </ul>
             </div>
+            
             <div className="footer-col">
               <h4>Extracurricular</h4>
               <ul>
@@ -71,14 +74,25 @@ export default function Footer({ footerLinks }) {
                   else if (link === 'Hackathons') to = '/hackathons';
                   else if (link === 'Writings') to = '/writings';
                   else if (link === 'Volunteering') to = '/volunteering';
+                  
+                  const handleExtracurricularClick = (e) => {
+                    e.preventDefault();
+                    navigate(to);
+                    // Scroll to top after navigation
+                    setTimeout(() => {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 100);
+                  };
+                  
                   return (
                     <li key={link}>
-                      <Link to={to}>{link}</Link>
+                      <Link to={to} onClick={handleExtracurricularClick}>{link}</Link>
                     </li>
                   );
                 })}
               </ul>
             </div>
+            
             <div className="footer-col">
               <h4>Follow Me</h4>
               <ul>
@@ -93,8 +107,12 @@ export default function Footer({ footerLinks }) {
               </ul>
             </div>
           </div>
-          <div className="footer-pic-wrapper">
-            <img src={footerPic} alt="Footer illustration" className="footer-pic" />
+
+          {/* Center Section - Contact Info & Image */}
+          <div className="footer-center-section">
+            <div className="footer-pic-wrapper">
+              <img src={footerPic} alt="Footer illustration" className="footer-pic" />
+            </div>
             <div className="footer-info">
               <div className="footer-info-row">
                 <img src={mailIcon} alt="Email" className="footer-info-icon" />
@@ -106,6 +124,8 @@ export default function Footer({ footerLinks }) {
               </div>
             </div>
           </div>
+
+          {/* Right Section - Newsletter */}
           <div className="footer-newsletter">
             <h4>Join</h4>
             <p>Subscribe to get the latest updates from my blog.</p>
@@ -114,18 +134,19 @@ export default function Footer({ footerLinks }) {
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ marginTop: '16px', display: 'inline-block' }}
             >
               Subscribe on Medium
             </a>
           </div>
         </div>
+
+        {/* Footer Divider */}
         <hr className="footer-divider" />
+
+        {/* Footer Bottom - Copyright */}
         <div className="footer-bottom">
           <div className="footer-credits">
             <p>© 2025 Arjun Sarkar. All rights reserved.</p>
-            {/* <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Settings</a> */}
           </div>
         </div>
       </div>
