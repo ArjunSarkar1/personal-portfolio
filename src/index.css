@@ -483,6 +483,35 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 0, 0, 0.4);
   }
   
+  .profile-counter {
+    position: absolute;
+    right: var(--space-5);
+    bottom: calc(var(--space-5) + 50px);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-small);
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: var(--color-text-light);
+    text-align: right;
+    pointer-events: auto;
+  }
+
+  .counter-number {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    font-size: var(--font-size-body);
+  }
+
+  .counter-label {
+    color: var(--color-gray-400);
+  }
+  
   .photo-credits {
     position: absolute;
     right: var(--space-5);
@@ -1396,6 +1425,9 @@ body {
 
   @media (max-width: 1024px) {
     .photo-credits {
+      display: none !important;
+    }
+    .profile-counter {
       display: none !important;
     }
   }

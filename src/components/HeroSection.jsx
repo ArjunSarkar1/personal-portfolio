@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { useBackgroundSlideshow } from '../hooks/useBackgroundSlideshow.js';
+import ProfileCounter from './ProfileCounter.jsx';
 
 // Usage: <HeroSection {...hero} />
 export default function HeroSection({ name, bio, interests, photoCredits }) {
@@ -15,6 +16,7 @@ export default function HeroSection({ name, bio, interests, photoCredits }) {
             <strong>Interests:</strong> {interests.join(', ')}
           </div>
         </div>
+        <ProfileCounter />
         <p className="photo-credits">
           Photos provided by{' '}
           {photoCredits.map((credit, i) => (
