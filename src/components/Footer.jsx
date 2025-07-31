@@ -71,7 +71,7 @@ export default function Footer({ footerLinks }) {
                 {footerLinks.extracurricular.map(link => {
                   let to = '/';
                   if (link === 'Hobbies') to = '/hobbies';
-                  else if (link === 'Hackathons') to = '/hackathons';
+                  else if (link === 'Events') to = '/events';
                   else if (link === 'Writings') to = '/writings';
                   else if (link === 'Volunteering') to = '/volunteering';
                   

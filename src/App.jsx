@@ -20,7 +20,7 @@ import ContactSection from './components/ContactSection.jsx'
 import Footer from './components/Footer.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hobbies from './components/Hobbies.jsx';
-import Hackathons from './components/Hackathons.jsx';
+import Events from './components/Events.jsx';
 import Writings from './components/Writings.jsx';
 import Volunteering from './components/Volunteering.jsx';
 
@@ -44,7 +44,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainSections />} />
-        <Route path="/hackathons" element={<Hackathons />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/hobbies" element={<Hobbies />} />
         <Route path="/writings" element={<Writings />} />
         <Route path="/volunteering" element={<Volunteering />} />
