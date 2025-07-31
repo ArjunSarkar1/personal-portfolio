@@ -83,7 +83,6 @@
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Hover Effects */
-    --hover-lift: translateY(-2px);
     --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     --hover-shadow-accent: 0 8px 25px rgba(59, 130, 246, 0.25);
     --hover-scale: scale(1.02);
@@ -1517,4 +1516,139 @@ body {
   border-color: #1d4ed8;
   color: var(--color-text-light);
   box-shadow: var(--hover-shadow-accent);
+}
+
+/* Writing Item Button Styles */
+.writing-item-button {
+  transition: all var(--transition-normal);
+  border-radius: 8px;
+  padding: var(--space-2) var(--space-3) !important;
+  margin: var(--space-1) 0;
+  border: 1px solid transparent;
+}
+
+.writing-item-button:hover {
+  background-color: var(--color-background-light);
+  border-color: var(--color-border);
+  transform: var(--hover-lift);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-indicator {
+  opacity: 0.7;
+  transition: opacity var(--transition-normal);
+}
+
+.writing-item-button:hover .pdf-indicator {
+  opacity: 1;
+}
+
+/* PDF Modal Styles */
+.pdf-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-4);
+}
+
+.pdf-modal {
+  background: var(--color-background-white);
+  border-radius: 16px;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pdf-modal-header h3 {
+  font-size: var(--font-size-h3);
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.pdf-modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  color: var(--color-text-dark);
+}
+
+.pdf-modal-close:hover {
+  background: var(--color-gray-200);
+}
+
+.pdf-modal-content {
+  flex: 1;
+  padding: var(--space-4);
+  overflow: hidden;
+}
+
+.pdf-modal-content iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for PDF Modal */
+@media (max-width: 1500px) {
+  .pdf-modal {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .pdf-modal-content iframe {
+    height: 600px;
+  }
+  
+  .pdf-modal-header {
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  .pdf-modal-content {
+    padding: var(--space-3);
+  }
+}
+
+/* View File Button Styles */
+.view-file-btn {
+  background: var(--color-accent) !important;
+  color: var(--color-text-light) !important;
+  border: none !important;
+  padding: var(--space-1) var(--space-3) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+  font-weight: var(--font-weight-medium) !important;
+  transition: all var(--transition-normal) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2) !important;
+}
+
+.view-file-btn:hover {
+  background: #1d4ed8 !important;
 }
