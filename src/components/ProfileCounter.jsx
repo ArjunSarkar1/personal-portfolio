@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useProfileViews } from '../hooks/useProfileViews.js';
 
 export default function ProfileCounter() {
-  const [count, setCount] = useState(0);
+  const { count, loading } = useProfileViews();
 
-  useEffect(() => {
-    // Get existing count from localStorage
-    const existingCount = localStorage.getItem('profileViewCount');
-    let currentCount = existingCount ? parseInt(existingCount) : 0;
-    
-    // Check if this is a new visitor (no session storage flag)
-    const hasVisited = sessionStorage.getItem('hasVisited');
-    if (!hasVisited) {
-      // Increment count for new visitor
-      currentCount += 1;
-      localStorage.setItem('profileViewCount', currentCount.toString());
-      sessionStorage.setItem('hasVisited', 'true');
-    }
-    
-    setCount(currentCount);
-  }, []);
+  if (loading) {
+    return (
+      <div className="profile-counter">
+        <span className="counter-number">...</span>
+        <span className="counter-label">Profile Views</span>
+      </div>
+    );
+  }
 
   return (
     <div className="profile-counter">
