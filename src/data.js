@@ -5,7 +5,7 @@ export const navLinks = [
   { label: 'Skills', icon: 'skills.svg', href: '#skills' },
   { label: 'Portfolio', icon: 'portfolio.svg', href: '#portfolio' },
   { label: 'Blog', icon: 'blog.svg', href: '#blog' },
-  { label: 'Connect', icon: 'connect.svg', href: '#contact' },
+  { label: 'Connect', icon: 'connect.svg', href: '#connect' },
 ];
 
 export const hero = {
@@ -146,7 +146,7 @@ export const contact = {
 };
 
 export const footerLinks = {
-  quick: ['About Me', 'Blog', 'Contact'],
+  quick: ['About Me', 'Blog', 'Connect'],
   extracurricular: ['Events', 'Hobbies', 'Writings', 'Volunteering'],
   follow: [
     { label: 'Github', icon: 'github.svg', url: 'https://github.com/ArjunSarkar1' },

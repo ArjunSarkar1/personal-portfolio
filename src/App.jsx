@@ -23,6 +23,7 @@ import Hobbies from './components/Hobbies.jsx';
 import Events from './components/Events.jsx';
 import Writings from './components/Writings.jsx';
 import Volunteering from './components/Volunteering.jsx';
+import LoadingScreen from './components/LoadingScreen.jsx';
 
 function MainSections() {
   useSmoothScroll();
@@ -41,15 +42,18 @@ function MainSections() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainSections />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/hobbies" element={<Hobbies />} />
-        <Route path="/writings" element={<Writings />} />
-        <Route path="/volunteering" element={<Volunteering />} />
-      </Routes>
-    </Router>
+    <>
+      <LoadingScreen />
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainSections />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="/writings" element={<Writings />} />
+          <Route path="/volunteering" element={<Volunteering />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

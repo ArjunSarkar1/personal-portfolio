@@ -51,7 +51,7 @@ export default function ContactSection({ contact }) {
   }
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="connect" className="contact-section">
       <div className="container">
         <div className="contact-content">
           <div className="contact-side-image left">
