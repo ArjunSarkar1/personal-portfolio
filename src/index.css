@@ -433,6 +433,31 @@ body {
     opacity: 0.8;
   }
   
+  .nav-icon-aboutme {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-icon-skills {
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-icon-portfolio {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-icon-blog {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-icon-connect {
+    width: 14px;
+    height: 14px;
+  }
+  
   .main-nav a .nav-icon {
     transition: filter var(--transition-normal);
     display: inline-block;
