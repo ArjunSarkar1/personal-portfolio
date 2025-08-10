@@ -95,20 +95,25 @@ export const projects = [
     link: 'https://github.com/ArjunSarkar1/SpaceWar',
   },
   {
-    title: 'Sentiment Multimodal AI',
-    image: 'svg/loading.svg',
-    date: 'July - Present',
-    status: 'In Progress',
-    description: '(Coming Soon...)Advanced sentiment analysis system that processes text, audio, and visual data to provide comprehensive emotional intelligence insights.'
-  },
-  {
     title: 'ClipsMaker',
     image: 'svg/loading.svg',
-    date: 'TBD',
-    status: 'Planning',
-    description: '(Coming Soon...)Automated video editing platform that automatically creates engaging content clips from longer videos, saving creators hours of manual editing.'
+    date: 'July - August 2025',
+    status: 'In Progress',
+    description: 'Automated video editing platform that automatically creates engaging content clips from longer Youtube videos, saving creators hours of manual editing.',
+    impact: 'Reduced manual editing by 80%',
+    tags: ['video-editing', 'clip-maker', 'podcasts', 'gameplay', 'Python'],
+    link: 'https://github.com/ArjunSarkar1/ClipsMaker',
   },
+  {
+    title: 'Sentiment Multimodal AI',
+    image: 'svg/loading.svg',
+    date: 'June - Present',
+    status: 'In Progress',
+    description: '(Coming Soon...)Advanced sentiment analysis system that processes text, audio, and visual data to provide comprehensive emotional intelligence insights.'
+  }
 ];
+
+/**Planning, In Progress, Completed*/
 
 export const blogs = [
   {
