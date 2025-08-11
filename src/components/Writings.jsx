@@ -57,45 +57,15 @@ export default function Writings() {
     setSelectedPDF(null);
   };
 
-  const renderWritingItem = (title, type, year) => {
-    const hasPDF = pdfMappings[title];
-    
-    return (
-      <li key={title} style={{ marginBottom: 'var(--space-4)' }}>
-        <div style={{ marginBottom: 'var(--space-2)' }}>
-          <strong>{title}</strong>
-        </div>
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          fontSize: '1rem',
-          color: 'var(--color-text-muted)'
-        }}>
-          <span><em>{type}, {year}</em></span>
-          {hasPDF && (
-            <button 
-              onClick={() => handlePDFClick(title)}
-              className="view-file-btn"
-              style={{ 
-                background: 'var(--color-accent)',
-                color: 'var(--color-text-light)',
-                border: 'none',
-                padding: 'var(--space-1) var(--space-3)',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                fontSize: '0.9rem',
-                fontWeight: 'var(--font-weight-medium)',
-                transition: 'all var(--transition-normal)'
-              }}
-            >
-              View file
-            </button>
-          )}
-        </div>
-      </li>
-    );
-  };
+  const writings = [
+    { title: 'Optimizing Matrix Operations for Machine Learning: Analysis of AMD\'s MI100 GPU', type: 'Research Paper', year: '2025' },
+    { title: 'Bayesian Imitation Learning with Uncertainty Propagation', type: 'Research Paper', year: '2024' },
+    { title: 'Ethics in Surveillance Capitalism', type: 'Reflection Essay', year: '2024' },
+    { title: 'Lessons in Software Safety', type: 'Reflection Essay', year: '2024' },
+    { title: 'AI Ownership', type: 'Reflection Essay', year: '2024' },
+    { title: 'Addressing Cyber Attacks', type: 'Reflection Essay', year: '2024' },
+    { title: 'Teamwork Effectiveness', type: 'Reflection Essay', year: '2024' }
+  ];
 
   return (
     <div>
@@ -106,21 +76,47 @@ export default function Writings() {
             <h2>Writings</h2>
             <p>Browse my academic papers, essays, reflections, reports and other literature.</p>
           </div>
-          <div className="blog-grid">
-            <article className="blog-card">
-              <div className="card-content">
-                <h3 style={{ color: 'var(--color-text-dark)' }}>Academic Literature</h3>
-                <ul style={{ marginTop: '1.5rem', fontSize: '1.1rem', lineHeight: 1.7, color: 'var(--color-text-dark)' }}>
-                  {renderWritingItem('Optimizing Matrix Operations for Machine Learning: Analysis of AMD\'s MI100 GPU', 'Research Paper', '2025')}
-                  {renderWritingItem('Bayesian Imitation Learning with Uncertainty Propagation', 'Research Paper', '2024')}
-                  {renderWritingItem('Ethics in Surveillance Capitalism', 'Reflection Essay', '2024')}
-                  {renderWritingItem('Lessons in Software Safety', 'Reflection Essay', '2024')}
-                  {renderWritingItem('AI Ownership', 'Reflection Essay', '2024')}
-                  {renderWritingItem('Addressing Cyber Attacks', 'Reflection Essay', '2024')}
-                  {renderWritingItem('Teamwork Effectiveness', 'Reflection Essay', '2024')}
-                </ul>
-              </div>
-            </article>
+          <div className="writings-table-container">
+            <table className="writings-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Title</th>
+                  <th>Type</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {writings.map((writing, index) => (
+                  <tr key={index}>
+                    <td>{writing.year}</td>
+                    <td>{writing.title}</td>
+                    <td>{writing.type}</td>
+                    <td>
+                      {pdfMappings[writing.title] && (
+                        <button 
+                          onClick={() => handlePDFClick(writing.title)}
+                          className="view-file-btn"
+                          style={{ 
+                            background: 'var(--color-accent)',
+                            color: 'var(--color-text-light)',
+                            border: 'none',
+                            padding: 'var(--space-1) var(--space-3)',
+                            borderRadius: '6px',
+                            cursor: 'pointer',
+                            fontSize: '0.9rem',
+                            fontWeight: 'var(--font-weight-medium)',
+                            transition: 'all var(--transition-normal)'
+                          }}
+                        >
+                          View file
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

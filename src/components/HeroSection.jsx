@@ -21,7 +21,12 @@ export default function HeroSection({ name, bio, interests, photoCredits }) {
           Photos provided by{' '}
           {photoCredits.map((credit, i) => (
             <span key={credit.name}>
-              <a href={credit.url} target="_blank" rel="noopener noreferrer"><strong>{credit.name}</strong></a>
+              <button 
+                className="photo-credit-btn"
+                onClick={() => window.open(credit.url, '_blank', 'noopener,noreferrer')}
+              >
+                <strong>{credit.name}</strong>
+              </button>
               {i < photoCredits.length - 1 && ' and '}
             </span>
           ))}
