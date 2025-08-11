@@ -43,7 +43,7 @@ src/
 │   ├── SkillsSection.jsx # Skills display
 │   ├── PortfolioSection.jsx # Project showcase
 │   ├── BlogSection.jsx # Blog posts
-│   ├── ContactSection.jsx # Contact information
+│   ├── Section.jsx # Contact information
 │   └── Footer.jsx      # Footer component
 ├── hooks/              # Custom React hooks
 │   ├── useBackgroundSlideshow.js

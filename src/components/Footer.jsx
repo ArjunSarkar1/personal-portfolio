@@ -47,10 +47,10 @@ export default function Footer({ footerLinks }) {
                         <Link to="/" onClick={handleNavAndScroll('#hero')} className="footer-smooth-scroll">{link}</Link>
                       </li>
                     );
-                  } else if (link === 'Contact') {
+                  } else if (link === 'Connect') {
                     return (
                       <li key={link}>
-                        <Link to="/" onClick={handleNavAndScroll('#contact')} className="footer-smooth-scroll">{link}</Link>
+                        <Link to="/" onClick={handleNavAndScroll('#connect')} className="footer-smooth-scroll">{link}</Link>
                       </li>
                     );
                   } else if (link === 'Blog') {
@@ -135,7 +135,7 @@ export default function Footer({ footerLinks }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Subscribe on Medium
+              Subscribe
             </a>
           </div>
         </div>
