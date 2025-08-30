@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import './App.css'
-import { useSmoothScroll } from './hooks/useSmoothScroll.js'
+import { useSmoothScroll } from "./hooks/useSmoothScroll.js";
 import {
   navLinks,
   hero,
@@ -9,21 +7,21 @@ import {
   projects,
   blogs,
   contact,
-  footerLinks
-} from './data.js'
-import Navbar from './components/Navbar.jsx'
-import HeroSection from './components/HeroSection.jsx'
-import SkillsSection from './components/SkillsSection.jsx'
-import PortfolioSection from './components/PortfolioSection.jsx'
-import BlogSection from './components/BlogSection.jsx'
-import ContactSection from './components/ContactSection.jsx'
-import Footer from './components/Footer.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Hobbies from './components/Hobbies.jsx';
-import Events from './components/Events.jsx';
-import Writings from './components/Writings.jsx';
-import Volunteering from './components/Volunteering.jsx';
-import LoadingScreen from './components/LoadingScreen.jsx';
+  footerLinks,
+} from "./data.js";
+import Navbar from "./components/Navbar.jsx";
+import HeroSection from "./components/HeroSection.jsx";
+import SkillsSection from "./components/SkillsSection.jsx";
+import PortfolioSection from "./components/PortfolioSection.jsx";
+import BlogSection from "./components/BlogSection.jsx";
+import ContactSection from "./components/ContactSection.jsx";
+import Footer from "./components/Footer.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Hobbies from "./components/Hobbies.jsx";
+import Events from "./components/Events.jsx";
+import Writings from "./components/Writings.jsx";
+import Volunteering from "./components/Volunteering.jsx";
+import LoadingScreen from "./components/LoadingScreen.jsx";
 
 function MainSections() {
   useSmoothScroll();
@@ -57,4 +55,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

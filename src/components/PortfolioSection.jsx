@@ -1,26 +1,28 @@
-import React, { useState, useMemo } from 'react';
-import '../App.css';
-import boxUpArrow from '../assets/svg/box-up-arrow.svg';
+import React, { useState, useMemo } from "react";
+import boxUpArrow from "../assets/svg/box-up-arrow.svg";
 
 // Vite dynamic image import
-const images = import.meta.glob('../assets/images/portfolio/*/*.{png,jpg,jpeg,svg}', { eager: true });
+const images = import.meta.glob(
+  "../assets/images/portfolio/*/*.{png,jpg,jpeg,svg}",
+  { eager: true }
+);
 
 // Usage: <PortfolioSection projects={projects} />
 export default function PortfolioSection({ projects }) {
   const INITIAL_VISIBLE = 3;
   const INCREMENT = 3;
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
 
   // Extract unique categories from project tags
   const categories = useMemo(() => {
-    const allTags = projects.flatMap(project => project.tags || []);
+    const allTags = projects.flatMap((project) => project.tags || []);
     const uniqueTags = [...new Set(allTags)];
-    return ['all', ...uniqueTags];
+    return ["all", ...uniqueTags];
   }, [projects]);
 
   const handleViewMore = () => {
-    setVisibleCount(prev => prev + INCREMENT);
+    setVisibleCount((prev) => prev + INCREMENT);
   };
 
   const handleFilterChange = (filter) => {
@@ -29,11 +31,12 @@ export default function PortfolioSection({ projects }) {
   };
 
   const filteredProjects = useMemo(() => {
-    if (activeFilter === 'all') {
+    if (activeFilter === "all") {
       return projects;
     }
-    return projects.filter(project => 
-      project.tags && project.tags.some(tag => tag.includes(activeFilter))
+    return projects.filter(
+      (project) =>
+        project.tags && project.tags.some((tag) => tag.includes(activeFilter))
     );
   }, [projects, activeFilter]);
 
@@ -48,36 +51,61 @@ export default function PortfolioSection({ projects }) {
           <p>Explore my innovative projects and their impact.</p>
         </div>
         <div className="portfolio-filters">
-          {categories.map(category => (
+          {categories.map((category) => (
             <button
               key={category}
-              className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
+              className={`filter-btn ${
+                activeFilter === category ? "active" : ""
+              }`}
               onClick={() => handleFilterChange(category)}
               aria-pressed={activeFilter === category}
-              aria-label={category === 'all' ? 'Show all projects' : `Filter by ${category}`}
+              aria-label={
+                category === "all"
+                  ? "Show all projects"
+                  : `Filter by ${category}`
+              }
             >
-              {category === 'all' ? 'All Projects' : category}
+              {category === "all" ? "All Projects" : category}
             </button>
           ))}
         </div>
         <div className="portfolio-grid">
           <div className="portfolio-column">
-            {visibleProjects.map(project => {
-              let imageSrc = '';
-              if (project.image.startsWith('portfolio/')) {
+            {visibleProjects.map((project) => {
+              let imageSrc = "";
+              if (project.image.startsWith("portfolio/")) {
                 const imagePath = `../assets/images/${project.image}`;
-                imageSrc = images[imagePath]?.default || '';
-              } else if (project.image.startsWith('svg/')) {
-                imageSrc = new URL(`../assets/${project.image}`, import.meta.url).href;
+                imageSrc = images[imagePath]?.default || "";
+              } else if (project.image.startsWith("svg/")) {
+                imageSrc = new URL(
+                  `../assets/${project.image}`,
+                  import.meta.url
+                ).href;
               }
               return (
-                <article className="project-card" key={project.title} data-project-card>
-                  <img src={imageSrc} alt={project.title} loading="lazy" width="100%" height="auto" />
+                <article
+                  className="project-card"
+                  key={project.title}
+                  data-project-card
+                >
+                  <img
+                    src={imageSrc}
+                    alt={project.title}
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                  />
                   <div className="card-content">
                     <h3>{project.title}</h3>
                     <div className="project-meta">
                       <span className="project-date">{project.date}</span>
-                      <span className={`project-status ${project.status.toLowerCase().replace(/ /g, '-')}`}>{project.status}</span>
+                      <span
+                        className={`project-status ${project.status
+                          .toLowerCase()
+                          .replace(/ /g, "-")}`}
+                      >
+                        {project.status}
+                      </span>
                     </div>
                     <p>{project.description}</p>
                     {project.impact && (
@@ -87,15 +115,26 @@ export default function PortfolioSection({ projects }) {
                     )}
                     {project.tags && (
                       <div className="tags">
-                        {project.tags.map(tag => (
-                          <span className="skill-tag" key={tag}>{tag}</span>
+                        {project.tags.map((tag) => (
+                          <span className="skill-tag" key={tag}>
+                            {tag}
+                          </span>
                         ))}
                       </div>
                     )}
                     {project.link && (
-                      <a href={project.link} className="btn-link-light" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.link}
+                        className="btn-link-light"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         View Project
-                        <img src={boxUpArrow} alt="Open" className="btn-icon project-arrow" />
+                        <img
+                          src={boxUpArrow}
+                          alt="Open"
+                          className="btn-icon project-arrow"
+                        />
                       </a>
                     )}
                   </div>
@@ -105,11 +144,16 @@ export default function PortfolioSection({ projects }) {
           </div>
         </div>
         {showViewMore && (
-          <button id="view-more-projects" className="btn btn-secondary" onClick={handleViewMore} aria-label="Show more projects">
+          <button
+            id="view-more-projects"
+            className="btn btn-secondary"
+            onClick={handleViewMore}
+            aria-label="Show more projects"
+          >
             View More
           </button>
         )}
       </div>
     </section>
   );
-} 
+}

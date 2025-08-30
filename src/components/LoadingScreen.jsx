@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import '../App.css';
+import React, { useState, useEffect } from "react";
 
 const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -19,9 +18,12 @@ const LoadingScreen = () => {
     <div className="loading-screen">
       <div className="loading-content">
         <div className="loading-profile">
-          <img 
-            src={new URL('../assets/images/footer/footer-pic.png', import.meta.url).href} 
-            alt="Profile" 
+          <img
+            src={
+              new URL("../assets/images/footer/footer-pic.png", import.meta.url)
+                .href
+            }
+            alt="Profile"
             className="loading-profile-image"
           />
         </div>
