@@ -11,7 +11,10 @@ export function useProfileViews() {
       const { data, error } = await supabase
         .from("profile_views")
         .select("total_views")
+        .eq("id", 1)
         .single();
+
+      console.log(data, error);
 
       if (error && error.code !== "PGRST116") {
         // PGRST116 is "not found"

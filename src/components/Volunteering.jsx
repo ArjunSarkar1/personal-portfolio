@@ -27,17 +27,22 @@ export default function Volunteering() {
                   }}
                 >
                   <li>
-                    🌎{" "}
-                    <strong>
-                      Student Representative - Manitoba GIS User Group
-                    </strong>{" "}
-                    <em> - 2024 to Present</em> <br /> ↳ Assisting with the
-                    organizational needs of the group.
+                    🫶 <strong> Volunteer </strong> <em> - 2025 to Present</em>{" "}
+                    <br /> ↳ Assisting with the proofreading letter and
+                    assisting with social media related tasks for Start With
+                    Mothers.
                   </li>{" "}
                   <br />
                   <li>
-                    ♟️ <strong>Chess Club</strong> <em> - 2024 to Present</em>{" "}
-                    <br /> ↳ Engaged in chess tournaments and practices
+                    🌎 <strong> Secretary </strong> <em> - 2024 to Present</em>{" "}
+                    <br /> ↳ Assisting with the organizational needs of the
+                    group for the Manitoba GIS User Group.
+                  </li>{" "}
+                  <br />
+                  <li>
+                    ♟️ <strong>Chess Club Member</strong>{" "}
+                    <em> - 2024 to Present</em> <br /> ↳ Engaged in chess
+                    tournaments and practices at the University of Manitoba
                   </li>{" "}
                   <br />
                   <li>

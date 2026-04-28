@@ -36,14 +36,13 @@ export default function Writings() {
   // PDF mappings
   const pdfMappings = {
     "Optimizing Matrix Operations for Machine Learning: Analysis of AMD's MI100 GPU":
-      "/src/assets/pdfs/OMPML.pdf",
-    "Bayesian Imitation Learning with Uncertainty Propagation":
-      "/src/assets/pdfs/BILUP.pdf",
-    "Lessons in Software Safety": "/src/assets/pdfs/SoftwareSafety.pdf",
-    "Teamwork Effectiveness": "/src/assets/pdfs/Teamwork.pdf",
-    "AI Ownership": "/src/assets/pdfs/AIOwnership.pdf",
-    "Ethics in Surveillance Capitalism": "/src/assets/pdfs/Capitalism.pdf",
-    "Addressing Cyber Attacks": "/src/assets/pdfs/CyberAttacks.pdf",
+      "OMPML.pdf",
+    "Bayesian Imitation Learning with Uncertainty Propagation": "BILUP.pdf",
+    "Lessons in Software Safety": "SoftwareSafety.pdf",
+    "Teamwork Effectiveness": "Teamwork.pdf",
+    "AI Ownership": "AIOwnership.pdf",
+    "Ethics in Surveillance Capitalism": "Capitalism.pdf",
+    "Addressing Cyber Attacks": "CyberAttacks.pdf",
   };
 
   const handlePDFClick = (title) => {
