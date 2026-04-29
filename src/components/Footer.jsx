@@ -1,9 +1,8 @@
-import React from 'react';
-import '../App.css';
-import footerPic from '../assets/images/footer/footer-pic.png';
-import mailIcon from '../assets/svg/mail.svg';
-import locationIcon from '../assets/svg/location-pin.svg';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from "react";
+import footerPic from "../assets/images/footer/footer-pic.png";
+import mailIcon from "../assets/svg/mail.svg";
+import locationIcon from "../assets/svg/location-pin.svg";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Usage: <Footer footerLinks={footerLinks} />
 export default function Footer({ footerLinks }) {
@@ -13,19 +12,19 @@ export default function Footer({ footerLinks }) {
   // Helper to handle navigation and smooth scroll
   const handleNavAndScroll = (hash) => (e) => {
     e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
+    if (location.pathname !== "/") {
+      navigate("/");
       // Wait for navigation, then scroll
       setTimeout(() => {
         const el = document.querySelector(hash);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 100);
     } else {
       const el = document.querySelector(hash);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   };
@@ -40,23 +39,41 @@ export default function Footer({ footerLinks }) {
             <div className="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                {footerLinks.quick.map(link => {
-                  if (link === 'About Me') {
+                {footerLinks.quick.map((link) => {
+                  if (link === "About Me") {
                     return (
                       <li key={link}>
-                        <Link to="/" onClick={handleNavAndScroll('#hero')} className="footer-smooth-scroll">{link}</Link>
+                        <Link
+                          to="/"
+                          onClick={handleNavAndScroll("#hero")}
+                          className="footer-smooth-scroll"
+                        >
+                          {link}
+                        </Link>
                       </li>
                     );
-                  } else if (link === 'Connect') {
+                  } else if (link === "Connect") {
                     return (
                       <li key={link}>
-                        <Link to="/" onClick={handleNavAndScroll('#connect')} className="footer-smooth-scroll">{link}</Link>
+                        <Link
+                          to="/"
+                          onClick={handleNavAndScroll("#connect")}
+                          className="footer-smooth-scroll"
+                        >
+                          {link}
+                        </Link>
                       </li>
                     );
-                  } else if (link === 'Blog') {
+                  } else if (link === "Blog") {
                     return (
                       <li key={link}>
-                        <a href="https://medium.com/@arjunsarkar82" target="_blank" rel="noopener noreferrer">{link}</a>
+                        <a
+                          href="https://medium.com/@arjunsarkar82"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link}
+                        </a>
                       </li>
                     );
                   }
@@ -64,42 +81,55 @@ export default function Footer({ footerLinks }) {
                 })}
               </ul>
             </div>
-            
+
             <div className="footer-col">
               <h4>Extracurricular</h4>
               <ul>
-                {footerLinks.extracurricular.map(link => {
-                  let to = '/';
-                  if (link === 'Hobbies') to = '/hobbies';
-                  else if (link === 'Events') to = '/events';
-                  else if (link === 'Writings') to = '/writings';
-                  else if (link === 'Volunteering') to = '/volunteering';
-                  
+                {footerLinks.extracurricular.map((link) => {
+                  let to = "/";
+                  if (link === "Hobbies") to = "/hobbies";
+                  else if (link === "Events") to = "/events";
+                  else if (link === "Writings") to = "/writings";
+                  else if (link === "Volunteering") to = "/volunteering";
+
                   const handleExtracurricularClick = (e) => {
                     e.preventDefault();
                     navigate(to);
                     // Scroll to top after navigation
                     setTimeout(() => {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      window.scrollTo({ top: 0, behavior: "smooth" });
                     }, 100);
                   };
-                  
+
                   return (
                     <li key={link}>
-                      <Link to={to} onClick={handleExtracurricularClick}>{link}</Link>
+                      <Link to={to} onClick={handleExtracurricularClick}>
+                        {link}
+                      </Link>
                     </li>
                   );
                 })}
               </ul>
             </div>
-            
+
             <div className="footer-col">
               <h4>Follow Me</h4>
               <ul>
-                {footerLinks.follow.map(link => (
+                {footerLinks.follow.map((link) => (
                   <li key={link.label}>
-                    <a href={link.url} target="_blank" rel="noopener noreferrer">
-                      <img src={new URL(`../assets/svg/${link.icon}`, import.meta.url).href} alt={link.label} className="footer-icon" />
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={
+                          new URL(`../assets/svg/${link.icon}`, import.meta.url)
+                            .href
+                        }
+                        alt={link.label}
+                        className="footer-icon"
+                      />
                       {link.label}
                     </a>
                   </li>
@@ -111,15 +141,25 @@ export default function Footer({ footerLinks }) {
           {/* Center Section - Contact Info & Image */}
           <div className="footer-center-section">
             <div className="footer-pic-wrapper">
-              <img src={footerPic} alt="Footer illustration" className="footer-pic" />
+              <img
+                src={footerPic}
+                alt="Footer illustration"
+                className="footer-pic"
+              />
             </div>
             <div className="footer-info">
               <div className="footer-info-row">
                 <img src={mailIcon} alt="Email" className="footer-info-icon" />
-                <span className="footer-info-text">arjuncodes111@gmail.com</span>
+                <span className="footer-info-text">
+                  arjuncodes111@gmail.com
+                </span>
               </div>
               <div className="footer-info-row">
-                <img src={locationIcon} alt="Location" className="footer-info-icon" />
+                <img
+                  src={locationIcon}
+                  alt="Location"
+                  className="footer-info-icon"
+                />
                 <span className="footer-info-text">Manitoba, Canada</span>
               </div>
             </div>
@@ -152,4 +192,4 @@ export default function Footer({ footerLinks }) {
       </div>
     </footer>
   );
-} 
+}
