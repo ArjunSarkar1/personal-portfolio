@@ -4,7 +4,7 @@ import { footerLinks } from "../data.js";
 
 // PDF Modal Component
 function PDFModal({ isOpen, onClose, pdfUrl, title }) {
-  if (!isOpen) return null;
+  if (!isOpen || !pdfUrl) return null;
 
   return (
     <div className="pdf-modal-overlay" onClick={onClose}>
@@ -15,19 +15,11 @@ function PDFModal({ isOpen, onClose, pdfUrl, title }) {
             ×
           </button>
         </div>
+
         <div className="pdf-modal-content">
           <iframe
-            src={
-              pdfUrl && (
-                <iframe
-                  src={pdfUrl}
-                  width="100%"
-                  height="600px"
-                  title={title}
-                  style={{ border: "none" }}
-                />
-              )
-            }
+            key={pdfUrl}
+            src={pdfUrl}
             width="100%"
             height="600px"
             title={title}
@@ -46,14 +38,13 @@ export default function Writings() {
   // PDF mappings
   const pdfMappings = {
     "Optimizing Matrix Operations for Machine Learning: Analysis of AMD's MI100 GPU":
-      "/public/OMPML.pdf",
-    "Bayesian Imitation Learning with Uncertainty Propagation":
-      "/public/BILUP.pdf",
-    "Lessons in Software Safety": "/public/SoftwareSafety.pdf",
-    "Teamwork Effectiveness": "/public/Teamwork.pdf",
-    "AI Ownership": "/public/AIOwnership.pdf",
-    "Ethics in Surveillance Capitalism": "/public/Capitalism.pdf",
-    "Addressing Cyber Attacks": "/public/CyberAttacks.pdf",
+      "/OMPML.pdf",
+    "Bayesian Imitation Learning with Uncertainty Propagation": "/BILUP.pdf",
+    "Lessons in Software Safety": "/SoftwareSafety.pdf",
+    "Teamwork Effectiveness": "/Teamwork.pdf",
+    "AI Ownership": "/AIOwnership.pdf",
+    "Ethics in Surveillance Capitalism": "/Capitalism.pdf",
+    "Addressing Cyber Attacks": "/CyberAttacks.pdf",
   };
 
   const handlePDFClick = (title) => {
