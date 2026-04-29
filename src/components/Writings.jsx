@@ -17,7 +17,17 @@ function PDFModal({ isOpen, onClose, pdfUrl, title }) {
         </div>
         <div className="pdf-modal-content">
           <iframe
-            src={pdfUrl}
+            src={
+              pdfUrl && (
+                <iframe
+                  src={pdfUrl}
+                  width="100%"
+                  height="600px"
+                  title={title}
+                  style={{ border: "none" }}
+                />
+              )
+            }
             width="100%"
             height="600px"
             title={title}
@@ -36,13 +46,14 @@ export default function Writings() {
   // PDF mappings
   const pdfMappings = {
     "Optimizing Matrix Operations for Machine Learning: Analysis of AMD's MI100 GPU":
-      "/OMPML.pdf",
-    "Bayesian Imitation Learning with Uncertainty Propagation": "/BILUP.pdf",
-    "Lessons in Software Safety": "/SoftwareSafety.pdf",
-    "Teamwork Effectiveness": "/Teamwork.pdf",
-    "AI Ownership": "/AIOwnership.pdf",
-    "Ethics in Surveillance Capitalism": "/Capitalism.pdf",
-    "Addressing Cyber Attacks": "/CyberAttacks.pdf",
+      "/writings/OMPML.pdf",
+    "Bayesian Imitation Learning with Uncertainty Propagation":
+      "/writings/BILUP.pdf",
+    "Lessons in Software Safety": "/writings/SoftwareSafety.pdf",
+    "Teamwork Effectiveness": "/writings/Teamwork.pdf",
+    "AI Ownership": "/writings/AIOwnership.pdf",
+    "Ethics in Surveillance Capitalism": "/writings/Capitalism.pdf",
+    "Addressing Cyber Attacks": "/writings/CyberAttacks.pdf",
   };
 
   const handlePDFClick = (title) => {
